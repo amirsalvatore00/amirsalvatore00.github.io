@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ================= SEO MASTERY ================= -->
+    <title>Amir Mohammad Amiri | امیرمحمد امیری</title>
+    <meta name="description" content="پورتفولیو و رزومه رسمی امیرمحمد امیری (Amir Mohammad Amiri). معمار شبکه و امنیت، متخصص سیسکو، فورتی‌نت و مجازی‌سازی. Enterprise Network Architect.">
+    <meta name="keywords" content="امیرمحمد امیری, امیر محمد امیری, amir mohammad amiri, Amir Mohammad Amiri, AmirMohammadAmiri, AmirMohammad Amiri, Amir mohamad amiri, معمار شبکه, مهندس شبکه, Network Architect, Cisco, Fortinet">
+    
+    <meta property="og:title" content="Amir Mohammad Amiri | Elite Network Architect">
+    <meta property="og:description" content="امیرمحمد امیری - طراح و معمار زیرساخت‌های حیاتی شبکه و امنیت سازمانی.">
+    <meta property="og:type" content="website">
+
+    <!-- TAB ICON (FAVICON) -->
+    <link rel="icon" href="website-icon.jpg" type="image/jpeg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Amir Mohammad Amiri",
+      "alternateName": [
+        "امیرمحمد امیری",
+        "امیر محمد امیری",
+        "amir mohammad amiri",
+        "AmirMohammadAmiri",
+        "AmirMohammad Amiri",
+        "Amir mohamad amiri"
+      ],
+      "jobTitle": "Enterprise Network & Security Architect",
+      "knowsAbout": ["Cisco", "Fortinet", "Network Security", "VMware", "Penetration Testing"],
+      "url": "https://AmirMohammadAmiri.com"
+    }
+    </script>
+    <!-- ============================================== -->
+
+    <!-- Fonts & Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-deep: #030712;
+            --text-main: #f8fafc;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --glass-bg: rgba(15, 23, 42, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glow-spread: rgba(6, 182, 212, 0.3);
+        }
+
+        body.defcon-mode {
+            --bg-deep: #1a0505; --accent-cyan: #ef4444; --accent-purple: #dc2626;
+            --glass-bg: rgba(40, 10, 10, 0.5); --glass-border: rgba(239, 68, 68, 0.2); --glow-spread: rgba(239, 68, 68, 0.4);
+        }
+
+        body.matrix-mode {
+            --bg-deep: #000a00; --accent-cyan: #22c55e; --accent-purple: #16a34a;
+            --glass-bg: rgba(0, 20, 0, 0.6); --glass-border: rgba(34, 197, 94, 0.3); --glow-spread: rgba(34, 197, 94, 0.4);
+        }
+        body.matrix-mode .text-gray-300, body.matrix-mode .text-gray-400 { color: #86efac !important; }
+
+        /* Scroll Progress */
+        #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent-cyan); z-index: 100000; width: 0%; box-shadow: 0 0 10px var(--accent-cyan); transition: background-color 0.5s; }
+
+        /* Base Resets */
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: hidden; }
+
+        body { background-color: var(--bg-deep); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; cursor: none; transition: background-color 0.8s ease; }
+        body[dir="rtl"] { font-family: 'Vazirmatn', sans-serif; }
+
+        /* Background Layers (Z-Index: -10 to -2) */
+        .noise-bg { position: fixed; inset: 0; z-index: -10; pointer-events: none; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); transition: opacity 0.8s; }
+        body.defcon-mode .noise-bg { opacity: 0.08; background-color: rgba(239, 68, 68, 0.1); }
+        body.matrix-mode .noise-bg { opacity: 0.1; background-color: rgba(34, 197, 94, 0.05); }
+
+        #network-canvas, #matrix-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5; pointer-events: none; }
+        #network-canvas { opacity: 0.5; transition: opacity 0.5s; }
+        #matrix-canvas { opacity: 0; z-index: -6; }
+        body.matrix-mode #network-canvas { opacity: 0.1; }
+        body.matrix-mode #matrix-canvas { opacity: 0.4; }
+
+        /* Cursors (Z-Index: 99999) */
+        .cursor-dot { position: fixed; top: 0; left: 0; width: 6px; height: 6px; background-color: var(--accent-cyan); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; box-shadow: 0 0 10px var(--accent-cyan); transition: background-color 0.3s; }
+        .cursor-outline { position: fixed; top: 0; left: 0; width: 36px; height: 36px; border: 1px solid rgba(6, 182, 212, 0.5); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999998; pointer-events: none; transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, border-radius 0.2s; }
+        .cursor-hover .cursor-outline { width: 50px; height: 50px; background-color: rgba(6, 182, 212, 0.1); border-color: var(--accent-cyan); border-radius: 10px; transform: translate(-50%, -50%) rotate(45deg); backdrop-filter: grayscale(100%); }
+        
+        body.defcon-mode .cursor-dot { background-color: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); }
+        body.defcon-mode .cursor-outline { border-color: var(--accent-cyan); }
+        body.matrix-mode .cursor-dot { background-color: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); }
+        body.matrix-mode .cursor-outline { border-color: var(--accent-cyan); }
+
+        /* Telemetry Box (Z-Index: 50) */
+        #telemetry-box { position: fixed; bottom: 20px; left: 20px; z-index: 50; font-family: 'Courier New', Courier, monospace; font-size: 10px; color: var(--accent-cyan); background: rgba(3, 7, 18, 0.7); border: 1px solid var(--glass-border); padding: 10px; border-radius: 8px; backdrop-filter: blur(8px); pointer-events: none; opacity: 0; transition: opacity 2s ease 5s; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+        #telemetry-box p { margin: 2px 0; }
+        
+        /* Intro Screen (Z-Index: 9999) */
+        #intro-screen { position: fixed; inset: 0; background: var(--bg-deep); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; transition: opacity 0.8s cubic-bezier(0.87, 0, 0.13, 1); }
+        .network-topology { width: 100%; max-width: 1000px; height: 60vh; position: relative; animation: camera-pan 4.5s ease-in-out forwards; }
+        @keyframes camera-pan { 0% { transform: scale(0.9) translateY(-20px); } 100% { transform: scale(1) translateY(0px); } }
+        .fiber-link { fill: none; stroke: rgba(6, 182, 212, 0.15); stroke-width: 2; }
+        .fiber-glow { fill: none; stroke: var(--accent-purple); stroke-width: 2; stroke-dasharray: 10 20; opacity: 0.5; animation: dash-flow 1s linear infinite; }
+        @keyframes dash-flow { to { stroke-dashoffset: -30; } }
+        .terminal-loader { position: absolute; bottom: 8%; width: 100%; text-align: center; font-family: 'Courier New', Courier, monospace; }
+        .loader-title { font-size: 1.5rem; color: var(--accent-cyan); letter-spacing: 3px; font-weight: bold; text-shadow: 0 0 15px var(--accent-cyan); margin-bottom: 15px; animation: glitch-text 2s infinite alternate; }
+        .loader-logs { font-size: 0.95rem; color: #94a3b8; height: 24px; font-weight: bold; }
+        .loader-logs::after { content: "[SYS] Initializing Network Architecture..."; animation: log-sequence 4.5s forwards; }
+        @keyframes log-sequence {
+            0% { content: "[SYS] Initializing Core Architecture..."; color: #94a3b8; }
+            15% { content: "[L1] Provisioning Fiber Optic Uplinks..."; color: #94a3b8; }
+            30% { content: "[L2] Spanning-Tree Topology Resolved."; color: var(--accent-purple); }
+            45% { content: "[L3] BGP Adjacencies Established."; color: var(--accent-cyan); }
+            60% { content: "[SEC] Enforcing Zero-Trust Segmentation..."; color: var(--accent-cyan); }
+            75% { content: "[SEC] Penetration Test: 0 Vulnerabilities Found."; color: #22c55e; }
+            90% { content: "[OK] Enterprise Fabric Online."; color: #22c55e; text-shadow: 0 0 10px #22c55e; }
+            100% { content: "[ACCESS GRANTED] Decrypting Profile..."; color: #fff; text-shadow: 0 0 15px #fff; }
+        }
+        .intro-flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 5; pointer-events: none; animation: flash-bang 1s ease-out 4.2s forwards; }
+        @keyframes flash-bang { 0% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: 0; } }
+
+        /* Navbar (Z-Index: 100) */
+        .glass-nav { background: rgba(3, 7, 18, 0.4); backdrop-filter: blur(16px); border-bottom: 1px solid var(--glass-border); transition: all 0.4s ease; z-index: 100; }
+        .glass-nav.scrolled { background: rgba(3, 7, 18, 0.85); padding-top: 0.5rem; padding-bottom: 0.5rem; border-bottom-color: var(--glass-border); }
+        .nav-link { position: relative; transition: color 0.3s; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background: var(--accent-cyan); transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        body[dir="rtl"] .nav-link::after { right: 0; left: auto; }
+
+        /* Glass Panels */
+        .glass-panel {
+            background: var(--glass-bg); backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid var(--glass-border); border-radius: 1.5rem;
+            padding: 2.5rem; position: relative; overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s, box-shadow 0.4s;
+            z-index: 10;
+        }
+        .glass-panel::before {
+            content: ""; position: absolute; top: var(--mouse-y, -100px); left: var(--mouse-x, -100px);
+            width: 400px; height: 400px; background: radial-gradient(circle, var(--glow-spread) 0%, transparent 60%);
+            transform: translate(-50%, -50%); pointer-events: none; transition: opacity 0.3s; z-index: -1; opacity: 0; mix-blend-mode: screen;
+        }
+        .glass-panel:hover::before { opacity: 1; }
+        .glass-panel:hover { transform: translateY(-5px); border-color: var(--accent-cyan); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 20px var(--glow-spread); }
+        .glass-panel > * { position: relative; z-index: 2; }
+
+        /* Tags & Inputs */
+        .skill-tag { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; color: #cbd5e1; transition: all 0.3s; position: relative; overflow: hidden; display: inline-block; }
+        .skill-tag:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-cyan); color: #fff; transform: scale(1.05); box-shadow: 0 0 15px var(--glow-spread); }
+        .cyber-input { width: 100%; background: rgba(15, 23, 42, 0.5) !important; border: 1px solid var(--glass-border); color: white !important; padding: 1rem; border-radius: 0.75rem; transition: all 0.3s; outline: none; backdrop-filter: blur(4px); }
+        .cyber-input:focus { border-color: var(--accent-cyan); box-shadow: 0 0 15px var(--glow-spread); background: rgba(15, 23, 42, 0.8) !important; }
+
+        /* Image Subtle & Elegant Glow */
+        .img-container { position: relative; border-radius: 2rem; display: inline-block; z-index: 10; }
+        .img-container::after { content: ''; position: absolute; inset: -2px; border-radius: 2rem; background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple)); z-index: -1; filter: blur(15px); opacity: 0; transition: opacity 0.4s ease; }
+        .img-container:hover::after { opacity: 0.6; }
+        .hero-img { border-radius: 2rem; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; display: block; transition: transform 0.4s ease; }
+        .img-container:hover .hero-img { transform: scale(1.01); border-color: rgba(255,255,255,0.3); }
+
+        /* Language Overlay */
+        #lang-overlay { position: fixed; inset: 0; background: #030712; z-index: 90000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); display: none; }
+        .magnetic { transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); display: inline-block; }
+
+        /* Optimized Text Repulsion */
+        .repel-text span { display: inline-block; transition: transform 0.2s ease-out, color 0.3s; white-space: pre; }
+        .repel-text span.repelled { color: var(--accent-cyan); text-shadow: 0 0 15px var(--accent-cyan); }
+
+        /* Marquee Ribbon */
+        .marquee-wrapper { width: 100vw; position: relative; margin-left: -1.5rem; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 1.5rem 0; z-index: 15; overflow: hidden; margin-top: 2rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .marquee-content { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+        body[dir="rtl"] .marquee-content { animation-direction: reverse; }
+        .marquee-item { font-size: 1.5rem; font-weight: 900; -webkit-text-stroke: 1px rgba(255,255,255,0.2); color: transparent; margin: 0 2rem; letter-spacing: 0.1em; transition: 0.3s; }
+        .marquee-item:hover { color: var(--accent-cyan); -webkit-text-stroke: 1px var(--accent-cyan); text-shadow: 0 0 20px var(--glow-spread); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .text-gradient { background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Draggable Terminal */
+        #easter-egg-terminal {
+            position: fixed; top: 50%; left: 50%; width: 480px; height: 380px;
+            background: rgba(10, 10, 10, 0.95); border: 1px solid var(--accent-cyan);
+            border-radius: 10px; z-index: 1000; display: flex; flex-direction: column;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 15px var(--glow-spread);
+            font-family: 'Courier New', Courier, monospace; color: #22c55e;
+            transform: translate(-50%, -50%) scale(0.9); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        #easter-egg-terminal.open { opacity: 1; pointer-events: all; transform: translate(-50%, -50%) scale(1); transition: opacity 0.3s; }
+        .term-header { background: rgba(255,255,255,0.1); padding: 8px 15px; font-size: 0.85rem; font-weight: bold; display: flex; justify-content: space-between; border-radius: 10px 10px 0 0; cursor: grab; user-select: none; }
+        .term-header:active { cursor: grabbing; }
+        .term-body { padding: 15px; overflow-y: auto; flex-grow: 1; font-size: 0.9rem; line-height: 1.6; }
+        .term-input-line { display: flex; gap: 10px; padding: 12px 15px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .term-input { background: transparent; border: none; color: white; outline: none; flex-grow: 1; font-family: inherit; font-size: 0.95rem; }
+
+        .nav-controls { display: flex; gap: 1rem; align-items: center; }
+        .toggle-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: none; transition: 0.3s; font-size: 1.1rem; color: #94a3b8; }
+        .toggle-btn:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-cyan); box-shadow: 0 0 10px var(--glow-spread); transform: scale(1.1); color: #fff; }
+
+        /* High-Tech Contact Cards */
+        .contact-card-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(6, 182, 212, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); font-size: 1.5rem; border: 1px solid rgba(6, 182, 212, 0.3); transition: 0.3s; flex-shrink: 0; }
+        .glow-card:hover .contact-card-icon { background: var(--accent-cyan); color: #000; box-shadow: 0 0 15px var(--accent-cyan); transform: scale(1.1); }
+        
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="custom-cursor-area overflow-hidden">
+
+    <div id="scroll-progress"></div>
+
+    <div class="noise-bg"></div>
+    <canvas id="matrix-canvas"></canvas>
+    <canvas id="network-canvas"></canvas>
+    
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <div id="telemetry-box">
+        <p class="font-bold text-white mb-2">SYS_TELEMETRY_V2</p>
+        <p id="tel-ip">CLIENT IP: FETCHING...</p>
+        <p id="tel-ping">LATENCY: CALC...</p>
+        <p id="tel-pack">PACKETS: SECURE</p>
+        <p id="tel-enc">ENC: AES-256-GCM</p>
+    </div>
+
+    <!-- 1. 3D Intro -->
+    <div id="intro-screen">
+        <div class="network-topology">
+            <svg viewBox="0 0 1000 500" class="w-full h-full">
+                <defs>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+                    <g id="router-3d" transform="translate(-40, -20)">
+                        <path d="M 0 20 L 40 0 L 80 20 L 40 40 Z" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/><path d="M 0 20 L 0 35 L 40 55 L 40 40 Z" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/><path d="M 80 20 L 80 35 L 40 55 L 40 40 Z" fill="#020617" stroke="#06b6d4" stroke-width="1.5"/><path d="M 40 10 L 50 15 M 40 10 L 30 15 M 40 10 L 40 25" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+                        <circle cx="15" cy="27" r="1.5" fill="#22c55e"><animate attributeName="opacity" values="0;1;0" dur="0.5s" repeatCount="indefinite"/></circle><circle cx="25" cy="32" r="1.5" fill="#22c55e"><animate attributeName="opacity" values="0;1;0" dur="0.8s" repeatCount="indefinite"/></circle>
+                    </g>
+                    <g id="switch-3d" transform="translate(-30, -15)">
+                        <path d="M 0 15 L 30 0 L 60 15 L 30 30 Z" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/><path d="M 0 15 L 0 25 L 30 40 L 30 30 Z" fill="#0f172a" stroke="#8b5cf6" stroke-width="1.5"/><path d="M 60 15 L 60 25 L 30 40 L 30 30 Z" fill="#020617" stroke="#8b5cf6" stroke-width="1.5"/>
+                        <circle cx="10" cy="20" r="1" fill="#22c55e"><animate attributeName="opacity" values="0;1;0" dur="0.4s" repeatCount="indefinite"/></circle><circle cx="15" cy="23" r="1" fill="#22c55e"><animate attributeName="opacity" values="0;1;0" dur="0.7s" repeatCount="indefinite"/></circle><circle cx="20" cy="25" r="1" fill="#22c55e"><animate attributeName="opacity" values="0;1;0" dur="0.3s" repeatCount="indefinite"/></circle>
+                    </g>
+                </defs>
+                <g class="fiber-link"><path d="M 350 100 L 650 100" /> <path d="M 350 250 L 650 250" /><path d="M 350 100 L 350 250" /> <path d="M 350 100 L 650 250" /><path d="M 650 100 L 350 250" /> <path d="M 650 100 L 650 250" /><path d="M 350 250 L 200 400" /> <path d="M 350 250 L 500 400" /><path d="M 350 250 L 800 400" /> <path d="M 650 250 L 200 400" /><path d="M 650 250 L 500 400" /> <path d="M 650 250 L 800 400" /></g>
+                <g class="fiber-glow"><path d="M 350 100 L 350 250" /> <path d="M 650 100 L 650 250" /><path d="M 350 250 L 200 400" /> <path d="M 650 250 L 800 400" /></g>
+                <circle r="4" fill="#06b6d4" filter="url(#glow)"><animateMotion dur="2s" repeatCount="indefinite" path="M 350 100 L 650 250 L 800 400" /></circle>
+                <circle r="4" fill="#8b5cf6" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M 200 400 L 350 250 L 650 100" /></circle>
+                <circle r="4" fill="#22c55e" filter="url(#glow)"><animateMotion dur="1s" repeatCount="indefinite" path="M 350 100 L 650 100" /></circle>
+                <circle r="4" fill="#06b6d4" filter="url(#glow)"><animateMotion dur="1.8s" repeatCount="indefinite" path="M 650 100 L 650 250 L 500 400" /></circle>
+                <use href="#router-3d" x="350" y="100" filter="url(#glow)" /><text x="350" y="155" fill="#06b6d4" font-size="12" text-anchor="middle" font-family="monospace" font-weight="bold">CORE-SW-01</text>
+                <use href="#router-3d" x="650" y="100" filter="url(#glow)" /><text x="650" y="155" fill="#06b6d4" font-size="12" text-anchor="middle" font-family="monospace" font-weight="bold">CORE-SW-02</text>
+                <use href="#switch-3d" x="350" y="250" filter="url(#glow)" /><text x="350" y="300" fill="#8b5cf6" font-size="11" text-anchor="middle" font-family="monospace">DIST-SW-01</text>
+                <use href="#switch-3d" x="650" y="250" filter="url(#glow)" /><text x="650" y="300" fill="#8b5cf6" font-size="11" text-anchor="middle" font-family="monospace">DIST-SW-02</text>
+                <use href="#switch-3d" x="200" y="400" /><text x="200" y="450" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="monospace">ACC-SW-01</text>
+                <use href="#switch-3d" x="500" y="400" /><text x="500" y="450" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="monospace">ACC-SW-02</text>
+                <use href="#switch-3d" x="800" y="400" /><text x="800" y="450" fill="#94a3b8" font-size="10" text-anchor="middle" font-family="monospace">ACC-SW-03</text>
+            </svg>
+        </div>
+        <div class="terminal-loader"><div class="loader-title">ESTABLISHING SECURE CONNECTION...</div><div class="loader-logs"></div></div>
+        <div class="intro-flash"></div>
+    </div>
+
+    <!-- 2. Language Selector -->
+    <div id="lang-overlay">
+        <h1 class="text-4xl font-light mb-12 text-gray-300 tracking-wide">Select Language</h1>
+        <div class="flex flex-col md:flex-row gap-6">
+            <button onclick="initSite('en')" class="magnetic hover-trigger px-8 py-4 border border-gray-700 rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-colors text-xl flex items-center justify-center gap-3 w-48">
+                <img src="English_language-icon.webp" alt="English Language" class="w-8 h-auto rounded-sm shadow-md border border-gray-600"> English
+            </button>
+            <button onclick="initSite('fa')" class="magnetic hover-trigger px-8 py-4 border border-gray-700 rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-colors text-xl flex items-center justify-center gap-3 w-48" style="font-family: 'Vazirmatn', sans-serif;">
+                <img src="Persian-icon.png" alt="Persian Language" class="w-8 h-auto rounded-sm shadow-md border border-gray-600"> فارسی
+            </button>
+            <button onclick="initSite('de')" class="magnetic hover-trigger px-8 py-4 border border-gray-700 rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-colors text-xl flex items-center justify-center gap-3 w-48">
+                <img src="Deutsch-language-icon.webp" alt="German Language" class="w-8 h-auto rounded-sm shadow-md border border-gray-600"> Deutsch
+            </button>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 glass-nav hidden opacity-0 transition-opacity duration-1000">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-all duration-300">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-900/50 hover-trigger cursor-default">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse-slow indicator-dot"></span>
+                <span class="text-xs font-semibold tracking-wide text-gray-300 t-elem decrypt-target" data-en="Available for Enterprise Projects" data-fa="آماده برای پروژه‌های سازمانی" data-de="Verfügbar für Unternehmensprojekte">Available for Enterprise Projects</span>
+            </div>
+
+            <ul class="hidden lg:flex gap-6 text-sm font-medium uppercase tracking-wide items-center">
+                <li><a href="#home" class="nav-link hover-trigger t-elem decrypt-target" data-en="Home" data-fa="صفحه اصلی" data-de="Start">Home</a></li>
+                <li><a href="#services" class="nav-link hover-trigger t-elem decrypt-target" data-en="Services" data-fa="خدمات" data-de="Dienste">Services</a></li>
+                <li><a href="#coming-soon" class="nav-link hover-trigger t-elem decrypt-target" data-en="Products" data-fa="محصولات" data-de="Produkte">Products</a></li>
+                <li><a href="#coming-soon" class="nav-link hover-trigger t-elem decrypt-target" data-en="Portfolio" data-fa="نمونه‌کارها" data-de="Portfolio">Portfolio</a></li>
+                <li><a href="#coming-soon" class="nav-link hover-trigger t-elem decrypt-target" data-en="Blog" data-fa="وبلاگ" data-de="Blog">Blog</a></li>
+                <li><a href="#about" class="nav-link hover-trigger t-elem decrypt-target" data-en="About Me" data-fa="درباره من" data-de="Über Mich">About Me</a></li>
+                <li><a href="#contact" class="nav-link hover-trigger t-elem decrypt-target text-cyan-400" data-en="Contact" data-fa="تماس با من" data-de="Kontakt">Contact</a></li>
+                
+                <li class="nav-controls ml-4">
+                    <button id="sound-toggle" class="toggle-btn hover-trigger" title="Toggle Sound (Muted by default)">🔇</button>
+                    <button id="defcon-toggle" class="toggle-btn hover-trigger" title="Defcon Mode (Red Alert)">🚨</button>
+                    <button id="nav-term-btn" class="toggle-btn hover-trigger" title="Open Terminal">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="opacity-0 max-w-7xl mx-auto px-6 py-20 hidden relative z-10">
+        
+        <!-- SECTION 1: HOME -->
+        <section id="home" class="min-h-[85vh] flex flex-col-reverse md:flex-row items-center justify-between gap-12 pt-10 mb-16 reveal">
+            <div class="flex-1 space-y-6 text-center md:text-left rtl:md:text-right relative z-10">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight">
+                    <span class="t-elem block text-gray-300 text-3xl md:text-4xl mb-2 font-light decrypt-target" data-en="I am" data-fa="من" data-de="Ich bin">I am</span>
+                    
+                    <!-- EN/DE Name with Repel Effect -->
+                    <span class="en-de-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target repel-text t-elem" id="name-repel" data-en="Amir Mohammad" data-de="Amir Mohammad" data-fa="Amir Mohammad">Amir Mohammad</span>
+                    
+                    <!-- Persian Name without Repel Effect (Hidden in EN/DE, shown in FA) -->
+                    <span class="fa-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target t-elem hidden" data-fa="امیرمحمد امیری">امیرمحمد امیری</span>
+                    <br>
+                    
+                    <span class="t-elem text-white" data-en="" data-fa="هستم؛ " data-de=""></span><span class="text-gradient t-elem drop-shadow-[0_0_20px_rgba(6,182,212,0.4)] decrypt-target" data-en="Network Architect." data-fa="معمار شبکه." data-de="Netzwerkarchitekt.">Network Architect.</span>
+                </h1>
+                
+                <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto md:mx-0 t-elem backdrop-blur-sm bg-gray-900/20 p-4 rounded-xl border border-gray-800/50"
+                   data-en="I design, deploy, and secure critical IT infrastructures. My work spans government, healthcare, and financial sectors—where downtime isn't an option."
+                   data-fa="زیرساخت‌های حیاتی سازمانی را طراحی، پیاده‌سازی و امن می‌کنم. حوزه‌ی کاری من شامل پروژه‌های دولتی، درمانی و مالی است؛ جایی که قطعی سرویس، معنایی ندارد."
+                   data-de="Ich entwerfe, implementiere und sichere kritische IT-Infrastrukturen. Meine Arbeit erstreckt sich über Regierungs-, Gesundheits- und Finanzsektoren – wo Ausfallzeiten keine Option sind.">
+                </p>
+
+                <div class="pt-6 flex justify-center md:justify-start gap-4">
+                    <a href="#services" class="magnetic hover-trigger px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold transition-colors t-elem" style="box-shadow: 0 0 20px var(--glow-spread);" data-en="My Services" data-fa="خدمات من" data-de="Meine Dienste">My Services</a>
+                    <a href="#contact" class="magnetic hover-trigger px-8 py-4 bg-transparent border border-gray-600 hover:border-gray-300 text-white rounded-xl font-bold transition-colors t-elem backdrop-blur-md" data-en="Hire Me" data-fa="همکاری با من" data-de="Mich Einstellen">Hire Me</a>
+                </div>
+            </div>
+            
+            <div class="w-72 h-72 md:w-[450px] md:h-[450px] flex-shrink-0 relative mx-auto md:mx-0">
+                <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-3xl blur-3xl opacity-30 animate-pulse glow-bg"></div>
+                <div class="img-container w-full h-full">
+                    <img src="Amir Mohammad Amiri.jpeg" alt="امیرمحمد امیری - Amir Mohammad Amiri - Network Architect" title="Amir Mohammad Amiri" class="relative hero-img w-full h-full hover-trigger shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Ribbon -->
+        <div class="marquee-wrapper reveal">
+            <div class="marquee-content">
+                <span class="marquee-item">ENTERPRISE ARCHITECTURE</span><span class="marquee-item">•</span>
+                <span class="marquee-item">ZERO-TRUST SECURITY</span><span class="marquee-item">•</span>
+                <span class="marquee-item">BGP / OSPF / EIGRP</span><span class="marquee-item">•</span>
+                <span class="marquee-item">FORTINET WAF</span><span class="marquee-item">•</span>
+                <span class="marquee-item">VMWARE NSX</span><span class="marquee-item">•</span>
+                <span class="marquee-item">CISCO INFRASTRUCTURE</span><span class="marquee-item">•</span>
+                <span class="marquee-item">ENTERPRISE ARCHITECTURE</span><span class="marquee-item">•</span>
+                <span class="marquee-item">ZERO-TRUST SECURITY</span><span class="marquee-item">•</span>
+                <span class="marquee-item">BGP / OSPF / EIGRP</span>
+            </div>
+        </div>
+
+        <!-- NEW SECTION: SERVICES (Clicking cards fills the form and scrolls to it) -->
+        <section id="services" class="mb-32 reveal scroll-trigger-panel">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-black mb-4 t-elem decrypt-on-scroll" data-en="Professional Services" data-fa="خدمات تخصصی" data-de="Professionelle Dienstleistungen">Professional Services</h2>
+                <p class="text-gray-400 t-elem" data-en="Enterprise-grade solutions tailored for businesses of all sizes." data-fa="ارائه راهکارهای استاندارد و سازمانی متناسب با نیاز کسب‌وکارهای کوچک تا بزرگ." data-de="Unternehmenslösungen, maßgeschneidert für Unternehmen aller Größen.">Enterprise-grade solutions tailored for businesses of all sizes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <a href="#contact" onclick="prefillForm('درخواست: پشتیبانی و نگهداری شبکه', 'Request: Network Support & Maintenance', 'Anfrage: Netzwerkunterstützung')" class="glass-panel glow-card p-8 border-t-4 border-t-cyan-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">⚙️</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Network Support & Maintenance" data-fa="پشتیبانی و نگهداری شبکه" data-de="Netzwerkunterstützung & Wartung">Network Support & Maintenance</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Ensuring stability and rapid fault resolution. 24/7 monitoring, remote/on-site support, and periodic maintenance." data-fa="حفظ پایداری و رفع سریع اختلالات سرویس‌ها. مانیتورینگ ۲۴/۷، مراجعه حضوری و ریموت، و نگهداری دوره‌ای." data-de="Gewährleistung der Stabilität. 24/7-Überwachung, Remote-/Vor-Ort-Support und regelmäßige Wartung.">Ensuring stability and rapid fault resolution. 24/7 monitoring, remote/on-site support, and periodic maintenance.</p>
+                    <div class="mt-4 text-cyan-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 2 -->
+                <a href="#contact" onclick="prefillForm('درخواست: امنیت شبکه و تست نفوذ', 'Request: Security & Penetration Testing', 'Anfrage: Sicherheit & Penetrationstests')" class="glass-panel glow-card p-8 border-t-4 border-t-red-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Security & Penetration Testing" data-fa="امنیت شبکه و تست نفوذ" data-de="Sicherheit & Penetrationstests">Security & Penetration Testing</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Precise vulnerability assessments, periodic pentests, and securing sensitive infrastructure against cyber attacks." data-fa="ارزیابی دقیق آسیب‌پذیری‌ها، تست نفوذ دوره‌ای و ایمن‌سازی کامل زیرساخت‌های حساس سازمانی در برابر حملات سایبری." data-de="Präzise Schwachstellenbewertungen, regelmäßige Pentests und Sicherung sensibler Infrastrukturen.">Precise vulnerability assessments, periodic pentests, and securing sensitive infrastructure against cyber attacks.</p>
+                    <div class="mt-4 text-red-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 3 -->
+                <a href="#contact" onclick="prefillForm('درخواست: اجرای اکتیو و راه‌اندازی شبکه', 'Request: Active Network Setup', 'Anfrage: Aktive Netzwerkeinrichtung')" class="glass-panel glow-card p-8 border-t-4 border-t-blue-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🔌</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Active Network Setup" data-fa="اجرای اکتیو و راه‌اندازی شبکه" data-de="Aktive Netzwerkeinrichtung">Active Network Setup</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Installation, configuration, and deployment of Cisco equipment, servers, and routers with standard architecture." data-fa="نصب، پیکربندی و راه‌اندازی تخصصی تجهیزات سیسکو، میکروتیک و سرورها با معماری استاندارد و تضمین پایداری." data-de="Installation, Konfiguration und Bereitstellung von Cisco-Geräten, Servern und Routern mit Standardarchitektur.">Installation, configuration, and deployment of Cisco equipment, servers, and routers with standard architecture.</p>
+                    <div class="mt-4 text-blue-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 4 -->
+                <a href="#contact" onclick="prefillForm('درخواست: فایروال و کنترل دسترسی', 'Request: Firewall & Access Control', 'Anfrage: Firewall & Zugriffskontrolle')" class="glass-panel glow-card p-8 border-t-4 border-t-purple-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🧱</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Firewall & Access Control" data-fa="فایروال و کنترل دسترسی" data-de="Firewall & Zugriffskontrolle">Firewall & Access Control</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Hardware firewall implementation (FortiGate), network segmentation (VLAN), and Zero-Trust access policy enforcement." data-fa="پیاده‌سازی فایروال‌های سخت‌افزاری پیشرفته (مانند FortiGate)، تفکیک ترافیک شبکه (VLAN) و اعمال سیاست‌های دسترسی." data-de="Implementierung von Hardware-Firewalls (FortiGate), Netzwerksegmentierung (VLAN) und Zero-Trust-Zugriffsrichtlinien.">Hardware firewall implementation (FortiGate), network segmentation (VLAN), and Zero-Trust access policy enforcement.</p>
+                    <div class="mt-4 text-purple-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 5 -->
+                <a href="#contact" onclick="prefillForm('درخواست: طراحی سایت شرکتی و فروشگاهی', 'Request: Web Design & E-Commerce', 'Anfrage: Webdesign & E-Commerce')" class="glass-panel glow-card p-8 border-t-4 border-t-green-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">💻</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Web Design & E-Commerce" data-fa="طراحی سایت فروشگاهی و شرکتی" data-de="Webdesign & E-Commerce">Web Design & E-Commerce</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Designing ultra-fast, secure, and responsive websites with payment gateways and scalable infrastructure." data-fa="طراحی وب‌سایت‌های فوق‌سریع، امن و واکنش‌گرا با درگاه پرداخت، سئو قدرتمند و زیرساخت آماده برای فروش." data-de="Entwurf ultraschneller, sicherer und reaktionsschneller Websites mit Zahlungsgateways und skalierbarer Infrastruktur.">Designing ultra-fast, secure, and responsive websites with payment gateways and scalable infrastructure.</p>
+                    <div class="mt-4 text-green-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 6 -->
+                <a href="#contact" onclick="prefillForm('درخواست: خدمات IT کسب‌وکارهای کوچک', 'Request: Small Business IT Services', 'Anfrage: IT-Services für Kleinunternehmen')" class="glass-panel glow-card p-8 border-t-4 border-t-yellow-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🏢</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Small Business IT Services" data-fa="خدمات IT کسب‌وکارهای کوچک" data-de="IT-Services für Kleinunternehmen">Small Business IT Services</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Professional PC assembly, Windows & specialized software installation, original antivirus setup, and IT troubleshooting." data-fa="اسمبل سیستم‌های حرفه‌ای، نصب ویندوز و نرم‌افزارهای تخصصی، نصب آنتی‌ویروس اورجینال و رفع مشکلات اداری." data-de="Professionelle PC-Montage, Installation von Windows und Spezialsoftware, Einrichtung von Antivirenprogrammen.">Professional PC assembly, Windows & specialized software installation, original antivirus setup, and IT troubleshooting.</p>
+                    <div class="mt-4 text-yellow-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 7 -->
+                <a href="#contact" onclick="prefillForm('درخواست: راه‌اندازی VoIP و تلفن تحت شبکه', 'Request: VoIP & IP Telephony', 'Anfrage: VoIP & IP-Telefonie')" class="glass-panel glow-card p-8 border-t-4 border-t-pink-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">📞</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="VoIP & IP Telephony" data-fa="راه‌اندازی VoIP و تلفن تحت شبکه" data-de="VoIP & IP-Telefonie">VoIP & IP Telephony</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Setup of IP PBX, internal extensions, call queues, IVR (auto-attendant), and call recording systems." data-fa="راه‌اندازی مرکز تلفن IP، داخلی‌ها، صف تماس، منشی تلفنی دیجیتال (IVR)، ضبط مکالمات و سیستم گزارش‌گیری." data-de="Einrichtung von IP-PBX, internen Nebenstellen, Warteschlangen, IVR und Anrufaufzeichnungssystemen.">Setup of IP PBX, internal extensions, call queues, IVR (auto-attendant), and call recording systems.</p>
+                    <div class="mt-4 text-pink-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+                
+                <!-- Service 8 -->
+                <a href="#contact" onclick="prefillForm('درخواست: مجازی‌سازی و زیرساخت سرور', 'Request: Virtualization & Servers', 'Anfrage: Virtualisierung & Server')" class="glass-panel glow-card p-8 border-t-4 border-t-orange-500 group block hover:cursor-none">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🗄️</div>
+                    <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Virtualization & Servers" data-fa="مجازی‌سازی و زیرساخت سرور" data-de="Virtualisierung & Server">Virtualization & Servers</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="VMware vSphere/ESXi deployment, High Availability clusters, and Dell/HPE server hardware configurations." data-fa="پیاده‌سازی VMware vSphere/ESXi، کلاسترهای HA، راه‌اندازی سیستم بکاپ‌گیری خودکار و پیکربندی سخت‌افزاری." data-de="Bereitstellung von VMware vSphere, Hochverfügbarkeitsclustern und Dell/HPE-Server-Hardwarekonfigurationen.">VMware vSphere/ESXi deployment, High Availability clusters, and Dell/HPE server hardware configurations.</p>
+                    <div class="mt-4 text-orange-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- COMING SOON MODULES -->
+        <section id="coming-soon" class="mb-32 grid grid-cols-1 md:grid-cols-3 gap-8 reveal scroll-trigger-panel text-center">
+            <div id="products" class="glass-panel glow-card flex flex-col items-center justify-center p-10">
+                <div class="text-5xl mb-4 text-cyan-400">📦</div>
+                <h3 class="text-2xl font-bold text-white mb-2 t-elem decrypt-on-scroll" data-en="Products" data-fa="محصولات" data-de="Produkte">Products</h3>
+                <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Store module is currently under construction. Exciting tools coming soon." data-fa="فروشگاه در حال توسعه است. به زودی محصولات تخصصی در این بخش قرار می‌گیرد." data-de="Das Shop-Modul befindet sich im Aufbau. Spannende Tools folgen in Kürze.">Store module is currently under construction. Exciting tools coming soon.</p>
+                <span class="skill-tag mt-6 t-elem" data-en="Coming Soon" data-fa="به زودی" data-de="Demnächst">Coming Soon</span>
+            </div>
+            <div id="portfolio" class="glass-panel glow-card flex flex-col items-center justify-center p-10 border-cyan-500/30 border">
+                <div class="text-5xl mb-4 text-purple-400">📁</div>
+                <h3 class="text-2xl font-bold text-white mb-2 t-elem decrypt-on-scroll" data-en="Portfolio" data-fa="نمونه‌کارها" data-de="Portfolio">Portfolio</h3>
+                <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Curating my best enterprise architecture projects and designs to showcase here." data-fa="در حال مستندسازی و گردآوری بهترین پروژه‌ها و معماری‌های شبکه‌ام برای نمایش در اینجا هستم." data-de="Ich kuratiere meine besten Unternehmensarchitekturprojekte, um sie hier zu präsentieren.">Curating my best enterprise architecture projects and designs to showcase here.</p>
+                <span class="skill-tag mt-6 t-elem" data-en="Coming Soon" data-fa="به زودی" data-de="Demnächst">Coming Soon</span>
+            </div>
+            <div id="blog" class="glass-panel glow-card flex flex-col items-center justify-center p-10">
+                <div class="text-5xl mb-4 text-green-400">📝</div>
+                <h3 class="text-2xl font-bold text-white mb-2 t-elem decrypt-on-scroll" data-en="Blog" data-fa="وبلاگ" data-de="Blog">Blog</h3>
+                <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Technical articles on Zero-Trust, routing, and modern infrastructure will be published here." data-fa="مقاله‌های تخصصی در زمینه شبکه، امنیت، مسیريابی و فناوری‌های روز به زودی منتشر خواهد شد." data-de="Hier werden technische Artikel zu Zero-Trust, Routing und moderner Infrastruktur veröffentlicht.">Technical articles on Zero-Trust, routing, and modern infrastructure will be published here.</p>
+                <span class="skill-tag mt-6 t-elem" data-en="Coming Soon" data-fa="به زودی" data-de="Demnächst">Coming Soon</span>
+            </div>
+        </section>
+
+        <!-- SECTION: ABOUT ME -->
+        <section id="about" class="mb-32 glass-panel glow-card flex flex-col md:flex-row gap-12 items-center relative reveal scroll-trigger-panel">
+            <div class="w-full md:w-1/3 flex-shrink-0 z-10 flex justify-center">
+                <div class="img-container">
+                    <img src="Amir Mohammad Amiri.jpg" alt="امیر محمد امیری - AmirMohammad Amiri - Cisco Fortinet Expert" title="Amir Mohammad Amiri" class="relative hero-img w-full h-auto z-10 shadow-lg">
+                </div>
+            </div>
+            <div class="w-full md:w-2/3 z-10">
+                <h2 class="text-3xl font-black mb-6 flex items-center gap-4 t-elem decrypt-on-scroll" data-en="About Me" data-fa="درباره من" data-de="Über Mich">
+                    <span class="w-10 h-1 bg-cyan-500 rounded-full"></span> About Me
+                </h2>
+                <div class="space-y-4 text-gray-300 leading-relaxed text-lg t-elem"
+                     data-en="<p class='mb-4'>I design and implement networks that form the backbone of sensitive national organizations. My work revolves around projects where service downtime could mean the disruption of critical national, financial, or healthcare operations.</p><p class='mb-4'>My experience spans collaborations with key government entities, major banks, oil and energy companies, as well as leading hospitals. In all these cases, my focus has been on one thing: a secure, stable, and reliable architecture where technology serves business goals without friction.</p><p>My approach blends deep networking knowledge with an understanding of the operational needs of each industry. For me, a true enterprise network is one that proves itself not just at launch, but over the long term under the highest pressure.</p>"
+                     data-fa="<p class='mb-4'>من شبکه‌هایی را طراحی و پیاده‌سازی می‌کنم که ستون‌فقراتِ سازمان‌های حساس کشور را تشکیل می‌دهند. کار من در پروژه‌هایی خلاصه می‌شود که قطعیِ سرویس، می‌تواند به معنای مختل شدنِ امورِ ملی، مالی یا درمانی باشد.</p><p class='mb-4'>تجربه‌ی من، همکاری با نهادهای دولتیِ کلیدی، بانک‌های بزرگ، شرکت‌های حوزه‌ی نفت و انرژی، و همچنین بیمارستان‌های مرجع را در بر می‌گیرد. در کنار این‌ها، پروژه‌های صرافی‌های آنلاین و مؤسسات مالیِ خصوصی نیز بخشی از کارنامه‌ی من هستند. در همه‌ی این موارد، تمرکز من بر یک چیز بوده: معماریِ امن، پایدار و قابلِ اتکا؛ جایی که فناوری، بدون حاشیه، در خدمتِ اهدافِ کسب‌وکار باشد.</p><p>رویکرد من، تلفیقِ دانشِ عمیقِ شبکه با درکِ نیازهای عملیاتیِ هر صنعت است. برای من، یک شبکه‌ی خوب، شبکه‌ای است که نه در لحظه‌ی راه‌اندازی، بلکه در طولانی‌مدت و در مواجهه با بیشترین فشار، خودش را ثابت کند.</p>"
+                     data-de="<p class='mb-4'>Ich entwerfe und implementiere Netzwerke, die das Rückgrat der sensibelsten Organisationen des Landes bilden. Meine Arbeit dreht sich um Projekte, bei denen Serviceausfälle die Unterbrechung nationaler, finanzieller oder medizinischer Abläufe bedeuten könnten.</p><p class='mb-4'>Meine Erfahrung erstreckt sich auf die Zusammenarbeit mit wichtigen Regierungsbehörden, Großbanken, Öl- und Energieunternehmen sowie führenden Krankenhäusern. Mein Fokus lag stets auf einer sicheren, stabilen und zuverlässigen Architektur.</p><p>Mein Ansatz verbindet tiefes Netzwerk-Know-how mit dem Verständnis für die operativen Anforderungen jeder Branche. Ein gutes Netzwerk beweist sich unter höchstem Druck.</p>">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: EXPERIENCE -->
+        <section id="experience" class="mb-32 reveal scroll-trigger-panel">
+            <h2 class="text-3xl font-black mb-10 flex items-center gap-4 t-elem decrypt-on-scroll" data-en="Professional Experience" data-fa="سوابق کاری" data-de="Berufserfahrung">
+                <span class="w-10 h-1 bg-purple-500 rounded-full"></span> Professional Experience
+            </h2>
+            
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:to-purple-500 timeline-line">
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-gray-900 bg-cyan-500 shadow-[0_0_20px_var(--glow-spread)] md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 flex-shrink-0"></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel glow-card p-6">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-2xl font-bold text-white t-elem decrypt-on-scroll" data-en="Arad Arpanet" data-fa="شرکت آراد آرپانت" data-de="Arad Arpanet">Arad Arpanet</h3>
+                            <span class="text-cyan-400 font-semibold t-elem" data-en="Network Engineer" data-fa="کارشناس شبکه" data-de="Netzwerkingenieur">Network Engineer</span>
+                            <span class="text-xs text-gray-400 mt-1 t-elem" data-en="Jun 2026 - Present" data-fa="تیر ۱۴۰۵ - تاکنون" data-de="Jun 2026 - Heute">Jun 2026 - Present</span>
+                        </div>
+                        <div class="text-gray-300 text-sm leading-relaxed t-elem relative z-10"
+                             data-en="Developing and supporting IT infrastructures for hospitals, holdings, financial exchanges, oil & gas enterprises, and government organizations. Conducting security assessments and penetration testing."
+                             data-fa="توسعه و پشتیبانی شبکه و زیرساخت بیمارستان‌ها، هلدینگ‌ها، صرافی‌ها، شرکت‌های نفتی و سازمان‌های دولتی. اجرای تست نفوذ، بررسی امنیت و رفع مشکلات امنیتی زیرساخت."
+                             data-de="Entwicklung und Unterstützung von IT-Infrastrukturen für Krankenhäuser, Holdings und Börsen. Durchführung von Sicherheitsbewertungen."></div>
+                    </div>
+                </div>
+
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-gray-900 bg-gray-700 group-hover:bg-cyan-400 transition-all duration-300 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 flex-shrink-0"></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel glow-card p-6 opacity-90 hover:opacity-100">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-2xl font-bold text-white t-elem decrypt-on-scroll" data-en="Arman Data Pouyan" data-fa="آرمان داده پویان" data-de="Arman Data Pouyan">Arman Data Pouyan</h3>
+                            <span class="text-blue-400 font-semibold t-elem" data-en="Network & Security Engineer" data-fa="کارشناس شبکه و امنیت" data-de="Netzwerk- & Sicherheitsingenieur">Network & Security Engineer</span>
+                            <span class="text-xs text-gray-400 mt-1 t-elem" data-en="Sep 2025 - Jun 2026" data-fa="مهر ۱۴۰۴ - تیر ۱۴۰۵" data-de="Sep 2025 - Jun 2026">Sep 2025 - Jun 2026</span>
+                        </div>
+                        <div class="text-gray-300 text-sm leading-relaxed t-elem relative z-10"
+                             data-en="<p class='mb-3'>Collaborated on infrastructure projects for multiple national organizations including the State Deeds Registry, Blood Transfusion Org, and major banks.</p><p class='mb-3'>Upgraded enterprise network security based on national AFTA standards, optimizing access policies and security configurations.</p><p>Implemented and integrated advanced security platforms (FortiGate) with log analysis systems (Splunk) for continuous threat monitoring and rapid incident response.</p>"
+                             data-fa="<p class='mb-3'>همکاری در پروژه‌های زیرساختیِ چندین سازمان ملی و نهادهای حساس از جمله سازمان ثبت اسناد و املاک، سازمان انتقال خون، و بانک‌های بزرگ دولتی و خصوصی.</p><p class='mb-3'>ارتقاءِ سطحِ امنیتِ شبکه‌های سازمانی بر اساس استانداردهای ملیِ افتا (AFTA) و بهینه‌سازیِ کاملِ سیاست‌های دسترسی و پیکربندیِ تجهیزات امنیتی، که منجر به شفافیتِ بیشترِ ترافیک و افزایشِ کاراییِ زیرساخت شد.</p><p>پیاده‌سازی و یکپارچه‌سازیِ پلتفرم‌های پیشرفته‌ی امنیتی (FortiGate) با سیستم‌های تحلیلِ لاگ (Splunk) جهت پایشِ مستمرِ تهدیدات، شناساییِ سریع‌ترِ رویدادهای غیرعادی و واکنشِ به‌موقعِ تیمِ عملیات در قبال حوادث امنیتی.</p>"
+                             data-de="<p class='mb-3'>Zusammenarbeit bei Infrastrukturprojekten für nationale Organisationen, einschließlich des Grundbuchamts und großer Banken.</p><p class='mb-3'>Verbesserung der Netzwerksicherheit nach nationalen AFTA-Standards.</p><p>Implementierung und Integration von FortiGate mit Splunk zur kontinuierlichen Bedrohungsüberwachung.</p>"></div>
+                    </div>
+                </div>
+
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-gray-900 bg-gray-700 group-hover:bg-purple-500 transition-all duration-300 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 flex-shrink-0"></div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel glow-card p-6 opacity-90 hover:opacity-100">
+                        <div class="flex flex-col mb-4">
+                            <h3 class="text-2xl font-bold text-white t-elem decrypt-on-scroll" data-en="Parsian Hospital" data-fa="بیمارستان پارسیان" data-de="Parsian Krankenhaus">Parsian Hospital</h3>
+                            <span class="text-purple-400 font-semibold t-elem" data-en="Network & Infrastructure Engineer" data-fa="مهندس شبکه و زیرساخت" data-de="Netzwerk- & Infrastrukturingenieur">Network & Infrastructure Engineer</span>
+                            <span class="text-xs text-gray-400 mt-1 t-elem" data-en="Dec 2024 - Aug 2025" data-fa="دی ۱۴۰۳ - شهریور ۱۴۰۴" data-de="Dez 2024 - Aug 2025">Dec 2024 - Aug 2025</span>
+                        </div>
+                        <div class="text-gray-300 text-sm leading-relaxed t-elem relative z-10"
+                             data-en="<p class='mb-3'>Took over a failing flat network suffering from daily outages and lack of security. In less than a month, redesigned the entire topology from scratch using Cisco's three-tier model.</p><p class='mb-3'>Implemented isolated VLANs for clinical, administrative, and medical devices (PACS, RIS, HIS) with strict Layer 3 ACLs.</p><p class='mb-3'>Achieved 100% stability of clinical services, eliminated broadcast storms, and secured sensitive patient data. Standardized all racks, cabling, and logical documentation.</p><p class='text-cyan-400 italic'>More details available on my LinkedIn profile...</p>"
+                             data-fa="<p class='mb-3'>تحویل گرفتنِ شبکه‌ای که با قطعی‌های روزانه و معماریِ تخت (Flat) و فاقد امنیت دست‌وپنجه نرم می‌کرد. در کمتر از یک ماه، کل توپولوژی را از صفر بر اساس مدل سه‌لایه‌ی Cisco (Core/Distribution/Access) بازطراحی کردم.</p><p class='mb-3'>با پیاده‌سازیِ VLANهای مجزا برای بخش‌های درمانی، اداری، مالی و تجهیزات پزشکی (PACS، RIS، HIS) و اعمالِ ACLهای لایه‌۳، ارتباط بین آن‌ها را به‌طور کامل شفاف و محدود به نیازهای واقعی کردم.</p><p class='mb-3'>نتیجه‌ی این بازطراحی، ثباتِ ۱۰۰٪ سرویس‌های بالینی در بازه‌ی ۶ ماهه، حذف کامل Broadcast storms و جلوگیری از هرگونه دسترسیِ غیرمجاز به دیتای حساسِ بیماران بود. همچنین، تمامیِ رک‌ها، کابل‌کشی و مستنداتِ منطقی را استانداردسازی کردم تا تیمِ نگهداریِ بعدی، بدون سردرگمی بتواند شبکه را مدیریت کند.</p><p class='text-cyan-400 italic'>و بسیاری از اقدامات دیگر که در لینکدین بنده به طور کامل موجود هست...</p>"
+                             data-de="<p class='mb-3'>Übernahme eines fehlerhaften Netzwerks. In weniger als einem Monat wurde die gesamte Topologie nach dem Cisco-Dreischichtenmodell von Grund auf neu gestaltet.</p><p class='mb-3'>Implementierung isolierter VLANs mit strengen Layer-3-ACLs.</p><p class='mb-3'>Erzielte 100%ige Stabilität der klinischen Dienste und sicherte sensible Patientendaten. Standardisierung aller Racks und Dokumentationen.</p><p class='text-cyan-400 italic'>Weitere Details auf meinem LinkedIn-Profil...</p>"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SKILLS -->
+        <section id="skills" class="mb-32 reveal scroll-trigger-panel">
+            <h2 class="text-3xl font-black mb-10 flex items-center gap-4 t-elem decrypt-on-scroll" data-en="Technical Arsenal" data-fa="مهارت‌های تخصصی" data-de="Fähigkeiten">
+                <span class="w-10 h-1 bg-cyan-500 rounded-full"></span> Technical Arsenal
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-panel glow-card p-6">
+                    <h3 class="text-lg font-bold text-cyan-400 mb-4">🌐 Cisco Infrastructure</h3>
+                    <ul class="space-y-2 text-sm text-gray-300"><li>• Routing (BGP, OSPF, EIGRP)</li><li>• Switching (VLAN, STP, EtherChannel)</li><li>• Cisco ASA & Security</li><li>• Layer 2/3 Hardening</li></ul>
+                </div>
+                <div class="glass-panel glow-card p-6">
+                    <h3 class="text-lg font-bold text-red-400 mb-4">🛡️ Fortinet Security</h3>
+                    <ul class="space-y-2 text-sm text-gray-300"><li>• FortiGate Firewall Admin</li><li>• FortiWeb WAF</li><li>• FortiAnalyzer & Logging</li><li>• VPN & IPsec Tunnels</li></ul>
+                </div>
+                <div class="glass-panel glow-card p-6">
+                    <h3 class="text-lg font-bold text-blue-400 mb-4">☁️ VMware Virtualization</h3>
+                    <ul class="space-y-2 text-sm text-gray-300"><li>• vSphere (ESXi & vCenter)</li><li>• VMware NSX</li><li>• High Availability & DRS</li><li>• VM Backup & Snapshot Mgmt</li></ul>
+                </div>
+                <div class="glass-panel glow-card p-6">
+                    <h3 class="text-lg font-bold text-green-400 mb-4">🪟 Microsoft Servers</h3>
+                    <ul class="space-y-2 text-sm text-gray-300"><li>• Active Directory & GPO</li><li>• DNS & DHCP Failover</li><li>• DFS & File Server Quota</li><li>• IIS Web Services</li></ul>
+                </div>
+                <div class="glass-panel glow-card p-6">
+                    <h3 class="text-lg font-bold text-yellow-400 mb-4">🐧 Linux Servers</h3>
+                    <ul class="space-y-2 text-sm text-gray-300"><li>• LPIC-1 / LPIC-2 Level Admin</li><li>• Bash & Python Scripting</li><li>• Package Management</li><li>• Server Security (Iptables)</li></ul>
+                </div>
+                <div class="glass-panel glow-card p-6">
+                    <h3 class="text-lg font-bold text-purple-400 mb-4">📞 MikroTik & VoIP</h3>
+                    <ul class="space-y-2 text-sm text-gray-300"><li>• MikroTik RouterOS Configuration</li><li>• VoIP Infrastructure Setup</li><li>• SIP Trunking</li><li>• Network Traffic Shaping (QoS)</li></ul>
+                </div>
+                <div class="glass-panel glow-card p-6 md:col-span-2 lg:col-span-2">
+                    <h3 class="text-lg font-bold text-orange-400 mb-4">💾 Server & Storage & Monitoring</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <ul class="space-y-2 text-sm text-gray-300"><li>• Dell PowerEdge & HPE Servers</li><li>• SAN & NAS Storage Architecture</li><li>• RAID Configuration & iSCSI</li></ul>
+                        <ul class="space-y-2 text-sm text-gray-300"><li>• Zabbix / NMS Monitoring Stack</li><li>• Splunk SIEM for Log Analysis</li><li>• Proactive Alerting Setup</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: EDUCATION -->
+        <section id="education" class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-8 reveal scroll-trigger-panel">
+            <div class="glass-panel glow-card">
+                <h2 class="text-2xl font-black mb-6 flex items-center gap-3 t-elem decrypt-on-scroll" data-en="Education" data-fa="تحصیلات" data-de="Bildung">
+                    <span class="w-2 h-8 bg-purple-500 rounded-full"></span> Education
+                </h2>
+                <div class="border-l-2 border-gray-700 pl-4 py-2 hover:border-purple-500 transition-colors">
+                    <h3 class="text-lg font-bold text-white t-elem" data-en="B.Sc. in Business Management" data-fa="کارشناسی مدیریت بازرگانی" data-de="B.Sc. in Betriebswirtschaftslehre">B.Sc. in Business Management</h3>
+                    <p class="text-cyan-400 text-sm mt-1 t-elem" data-en="Islamic Azad University" data-fa="دانشگاه آزاد واحد علوم و تحقیقات" data-de="Islamische Azad Universität">Islamic Azad University (Science & Research Branch)</p>
+                    <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Current | GPA: 20" data-fa="در حال تحصیل | معدل ۲۰" data-de="Aktuell | GPA: 20">Current | GPA: 20</p>
+                </div>
+            </div>
+            <div id="certificates" class="glass-panel glow-card">
+                <h2 class="text-2xl font-black mb-6 flex items-center gap-3 t-elem decrypt-on-scroll" data-en="Certifications" data-fa="گواهینامه‌ها" data-de="Zertifikate">
+                    <span class="w-2 h-8 bg-cyan-500 rounded-full"></span> Certifications
+                </h2>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-tag hover-trigger">MCSA / MCSE</span><span class="skill-tag hover-trigger">CCNA 200-301</span>
+                    <span class="skill-tag hover-trigger">CCNP Enterprise</span><span class="skill-tag hover-trigger">CCNP Security</span>
+                    <span class="skill-tag hover-trigger">LPIC-1 / LPIC-2</span><span class="skill-tag hover-trigger">VMware VCP</span>
+                    <span class="skill-tag hover-trigger">CEH</span><span class="skill-tag hover-trigger">Fortinet NSE 4 / NSE 7</span>
+                    <span class="skill-tag hover-trigger">HPE ATP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: HIGH-TECH CONTACT -->
+        <section id="contact" class="mb-20 reveal scroll-trigger-panel">
+            <h2 class="text-4xl font-black mb-10 text-center t-elem drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] decrypt-on-scroll" data-en="Initialize Connection." data-fa="ارتباط با من." data-de="Kontakt aufnehmen.">Initialize Connection.</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Info Cards Left -->
+                <div class="flex flex-col gap-6 lg:col-span-1">
+                    
+                    <a href="tel:09963966631" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                        <div class="contact-card-icon">📞</div>
+                        <div>
+                            <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="Phone" data-fa="تلفن" data-de="Telefon">Phone</div>
+                            <div class="text-lg font-bold text-white tracking-wider" dir="ltr">0996 396 6631</div>
+                        </div>
+                    </a>
+                    
+                    <!-- NEW WHATSAPP BUTTON -->
+                    <a href="https://wa.me/989963966631" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                        <div class="contact-card-icon" style="color: #22c55e; border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.1);">💬</div>
+                        <div>
+                            <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="WhatsApp" data-fa="واتس‌اپ" data-de="WhatsApp">WhatsApp</div>
+                            <div class="text-lg font-bold text-white tracking-wider" dir="ltr">0996 396 6631</div>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:amirsalvatorenet@gmail.com" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                        <div class="contact-card-icon">✉️</div>
+                        <div>
+                            <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="Email" data-fa="ایمیل" data-de="E-Mail">Email</div>
+                            <div class="text-sm md:text-base font-bold text-white tracking-wide" dir="ltr">amirsalvatorenet<br>@gmail.com</div>
+                        </div>
+                    </a>
+
+                    <!-- UPDATED LINKEDIN URL -->
+                    <a href="https://linkedin.com/in/amir-mohammad-amiri-940306360" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                        <div class="contact-card-icon">🔗</div>
+                        <div>
+                            <div class="text-xs text-gray-400 uppercase tracking-widest">LinkedIn</div>
+                            <div class="text-base font-bold text-white tracking-wide">Amir Mohammad Amiri</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Form Right -->
+                <div class="glass-panel glow-card p-8 md:p-12 lg:col-span-2">
+                    <!-- Formspree Endpoint Added Here -->
+                    <form action="https://formspree.io/f/mljerava" method="POST" class="flex flex-col gap-6 relative z-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label class="text-sm font-semibold text-gray-400 t-elem" data-en="Full Name" data-fa="نام مجموعه / نام شما" data-de="Vollständiger Name">Full Name</label>
+                                <input type="text" name="name" required class="cyber-input hover-trigger" placeholder="John Doe">
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label class="text-sm font-semibold text-gray-400 t-elem" data-en="Phone Number" data-fa="شماره تماس" data-de="Telefonnummer">Phone Number</label>
+                                <input type="tel" name="phone" required class="cyber-input hover-trigger" placeholder="0912...">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-semibold text-gray-400 t-elem" data-en="Message" data-fa="توضیح نیاز شما" data-de="Nachricht">Message</label>
+                            <textarea id="contact-message" name="message" rows="4" required class="cyber-input hover-trigger resize-none" placeholder="How can I help you?"></textarea>
+                        </div>
+                        <button type="submit" class="magnetic hover-trigger w-full py-4 mt-4 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all submit-btn t-elem" style="box-shadow: 0 0 20px var(--glow-spread);" data-en="Transmit Message" data-fa="ارسال درخواست" data-de="Senden">Transmit Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center opacity-70 py-10 text-sm border-t border-gray-800 mt-20 flex flex-col items-center gap-4">
+            <p>&copy; 2026 Amir Mohammad Amiri. Engineered for Resilience.</p>
+        </footer>
+    </main>
+
+    <!-- ======== DRAGGABLE TERMINAL ======== -->
+    <div id="easter-egg-terminal">
+        <div class="term-header hover-trigger" id="term-header">
+            <span>root@amir-portfolio:~</span>
+            <span id="close-term" class="text-red-500 cursor-pointer" title="Close Terminal">X</span>
+        </div>
+        <div class="term-body" id="term-body">
+            <div>AmirOS (Network Architect System) [Version 1.0.0]</div>
+            <div class="mt-3 text-gray-400 border-b border-gray-700 pb-2 mb-2">Available commands:</div>
+            <div class="text-cyan-400 ml-2">> whoami   <span class="text-gray-500 ml-2">- View architect profile</span></div>
+            <div class="text-cyan-400 ml-2">> skills   <span class="text-gray-500 ml-2">- Load technical arsenal</span></div>
+            <div class="text-cyan-400 ml-2">> ping     <span class="text-gray-500 ml-2">- Test network latency</span></div>
+            <div class="text-cyan-400 ml-2">> clear    <span class="text-gray-500 ml-2">- Clear terminal log</span></div>
+            <div class="text-cyan-400 ml-2">> ssh      <span class="text-gray-500 ml-2">- Connect to employer</span></div>
+            <div class="mt-4 text-green-400">System initialized. Awaiting input...</div>
+        </div>
+        <div class="term-input-line">
+            <span class="text-cyan-400">root@portfolio:~$</span>
+            <input type="text" id="term-input" class="term-input hover-trigger" autocomplete="off" spellcheck="false">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // --- Custom Prefill Form Script for Services ---
+        function prefillForm(textFa, textEn, textDe) {
+            const currentLang = localStorage.getItem('siteLang') || 'fa';
+            const messageBox = document.getElementById('contact-message');
+            if (currentLang === 'fa') {
+                messageBox.value = textFa + "\n\nتوضیحات بیشتر: ";
+            } else if (currentLang === 'en') {
+                messageBox.value = textEn + "\n\nAdditional Details: ";
+            } else {
+                messageBox.value = textDe + "\n\nWeitere Details: ";
+            }
+        }
+
+        // --- 1. ASCII ART IN CONSOLE ---
+        console.log(`
+  █████╗ ███╗   ███╗██╗██████╗ 
+ ██╔══██╗████╗ ████║██║██╔══██╗
+ ███████║██╔████╔██║██║██████╔╝
+ ██╔══██║██║╚██╔╝██║██║██╔══██╗
+ ██║  ██║██║ ╚═╝ ██║██║██║  ██║
+ ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═╝
+ Enterprise Network Architect
+        `);
+
+        // --- 2. AUDIO ENGINE ---
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let isMuted = true;
+        
+        function playTone(freq, type, duration, vol=0.05) {
+            if(isMuted) return;
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = type; osc.frequency.value = freq;
+            gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + duration);
+        }
+        
+        document.getElementById('sound-toggle').addEventListener('click', () => {
+            isMuted = !isMuted;
+            document.getElementById('sound-toggle').innerText = isMuted ? '🔇' : '🔊';
+            if(!isMuted) playTone(1200, 'sine', 0.2, 0.1); 
+        });
+
+        document.querySelectorAll('.hover-trigger, .skill-tag, .contact-card-icon').forEach(el => {
+            el.addEventListener('mouseenter', () => playTone(600, 'square', 0.05, 0.01));
+            el.addEventListener('click', () => playTone(900, 'sine', 0.1, 0.02));
+        });
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('keydown', () => playTone(400, 'triangle', 0.03, 0.01));
+        });
+
+        // --- 3. THEME TOGGLES & KONAMI CODE (MATRIX RAIN) ---
+        const defconToggle = document.getElementById('defcon-toggle');
+        defconToggle.addEventListener('click', () => {
+            document.body.classList.remove('matrix-mode');
+            document.body.classList.toggle('defcon-mode');
+            if(document.body.classList.contains('defcon-mode')) {
+                playTone(200, 'sawtooth', 1.5, 0.1);
+                defconToggle.style.animation = 'glitch-text 1s infinite';
+            } else {
+                playTone(800, 'sine', 0.5, 0.1);
+                defconToggle.style.animation = 'none';
+            }
+        });
+
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        let matrixInterval;
+        document.addEventListener('keydown', (e) => {
+            if(e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if(konamiIndex === konamiCode.length) {
+                    document.body.classList.remove('defcon-mode');
+                    document.body.classList.toggle('matrix-mode');
+                    if(document.body.classList.contains('matrix-mode')){
+                        playTone(300, 'square', 2, 0.1);
+                        startMatrixRain();
+                    } else {
+                        clearInterval(matrixInterval);
+                    }
+                    konamiIndex = 0;
+                }
+            } else { konamiIndex = 0; }
+        });
+
+        function startMatrixRain() {
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+            const fontSize = 16;
+            const columns = canvas.width / fontSize;
+            const drops = [];
+            for(let x = 0; x < columns; x++) drops[x] = 1;
+            
+            if(matrixInterval) clearInterval(matrixInterval);
+            matrixInterval = setInterval(() => {
+                ctx.fillStyle = 'rgba(0, 10, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0F0';
+                ctx.font = fontSize + 'px monospace';
+                for(let i = 0; i < drops.length; i++) {
+                    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                }
+            }, 33);
+        }
+
+        // --- 4. SAFE TEXT REPULSION ---
+        const repelText = document.getElementById('name-repel');
+        if(repelText) {
+            const originalText = repelText.innerText;
+            repelText.innerHTML = '';
+            let spans = [];
+            originalText.split('').forEach(char => {
+                let span = document.createElement('span');
+                span.innerText = char;
+                if(char === ' ') span.innerHTML = '&nbsp;';
+                repelText.appendChild(span);
+                spans.push(span);
+            });
+
+            repelText.addEventListener('mousemove', (e) => {
+                const rect = repelText.getBoundingClientRect();
+                const mouseX = e.clientX;
+                spans.forEach(span => {
+                    const spanRect = span.getBoundingClientRect();
+                    const spanX = spanRect.left + spanRect.width / 2;
+                    const dist = mouseX - spanX;
+                    if(Math.abs(dist) < 50) {
+                        span.style.transform = `translateX(${dist > 0 ? -10 : 10}px) translateY(-5px) scale(1.1)`;
+                        span.classList.add('repelled');
+                    } else {
+                        span.style.transform = 'translate(0px, 0px) scale(1)';
+                        span.classList.remove('repelled');
+                    }
+                });
+            });
+            repelText.addEventListener('mouseleave', () => {
+                spans.forEach(span => {
+                    span.style.transform = 'translate(0px, 0px) scale(1)';
+                    span.classList.remove('repelled');
+                });
+            });
+        }
+
+        // --- 5. DECRYPTION EFFECT ---
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*<>";
+        function runDecrypt(element) {
+            if(element.id === 'name-repel') return; 
+            const originalText = element.innerText;
+            if(!originalText) return;
+            let iterations = 0;
+            const interval = setInterval(() => {
+                element.innerText = originalText.split("").map((letter, index) => {
+                    if(letter === " ") return " ";
+                    if(index < iterations) return originalText[index];
+                    return chars[Math.floor(Math.random() * chars.length)];
+                }).join("");
+                if(iterations >= originalText.length) clearInterval(interval);
+                iterations += 1/3;
+            }, 30);
+        }
+
+        // --- 6. SCROLL PROGRESS & GSAP & LENIS (SMOOTH SCROLL) ---
+        function initGSAPandLenis() {
+            document.body.classList.remove('overflow-hidden');
+            document.documentElement.classList.remove('overflow-hidden');
+
+            const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+            gsap.ticker.lagSmoothing(0);
+            
+            gsap.registerPlugin(ScrollTrigger);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                ScrollTrigger.create({
+                    trigger: el, start: "top 85%",
+                    onEnter: () => el.classList.add('active'),
+                    once: true
+                });
+            });
+
+            document.querySelectorAll('.scroll-trigger-panel').forEach(panel => {
+                ScrollTrigger.create({
+                    trigger: panel, start: "top 80%",
+                    onEnter: () => panel.querySelectorAll('.decrypt-on-scroll').forEach(el => runDecrypt(el)),
+                    once: true
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + "%";
+            });
+        }
+
+        // --- 7. CORE LOGIC (Cursor, Hover, Intro) ---
+        window.addEventListener('DOMContentLoaded', () => {
+            initParticles(); animateParticles();
+            setTimeout(() => {
+                const intro = document.getElementById('intro-screen');
+                intro.style.opacity = '0';
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                    document.getElementById('lang-overlay').style.display = 'flex';
+                }, 800);
+            }, 4800);
+        });
+
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX; const posY = e.clientY;
+            cursorDot.style.left = `${posX}px`; cursorDot.style.top = `${posY}px`;
+            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 150, fill: "forwards" });
+        });
+        
+        document.querySelectorAll('a, button, input, textarea, .hover-trigger, .skill-tag, .term-header').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+
+        let ticking = false;
+        document.querySelectorAll('.glow-card').forEach(panel => {
+            panel.addEventListener('mousemove', e => {
+                if(!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const rect = panel.getBoundingClientRect();
+                        panel.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                        panel.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', e => {
+                const rect = btn.getBoundingClientRect();
+                btn.style.transform = `translate(${(e.clientX - rect.left - rect.width / 2) * 0.2}px, ${(e.clientY - rect.top - rect.height / 2) * 0.2}px)`;
+            });
+            btn.addEventListener('mouseleave', () => btn.style.transform = `translate(0px, 0px)`);
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // --- 8. LANGUAGE INIT & REAL TELEMETRY ---
+        let currentLatency = 10;
+        function initSite(lang) {
+            localStorage.setItem('siteLang', lang);
+            const overlay = document.getElementById('lang-overlay');
+            overlay.style.transform = 'translateY(-100%)';
+            
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                const mainContent = document.getElementById('main-content');
+                const navbar = document.getElementById('navbar');
+                const telemetry = document.getElementById('telemetry-box');
+                
+                mainContent.classList.remove('hidden');
+                navbar.classList.remove('hidden');
+                
+                if(lang === 'fa') { document.body.setAttribute('dir', 'rtl'); } 
+                else { document.body.setAttribute('dir', 'ltr'); }
+
+                // مدیریت نمایش نام بر اساس زبان برای جلوگیری از به هم ریختگی افکت Repel در فارسی
+                const enDeName = document.querySelector('.en-de-name');
+                const faName = document.querySelector('.fa-name');
+                if (lang === 'fa') {
+                    if(enDeName) enDeName.style.display = 'none';
+                    if(faName) faName.classList.remove('hidden');
+                } else {
+                    if(enDeName) enDeName.style.display = 'inline-block';
+                    if(faName) faName.classList.add('hidden');
+                }
+
+                document.querySelectorAll('.t-elem').forEach(el => {
+                    if(el.id === 'name-repel') return;
+                    const translatedText = el.getAttribute(`data-${lang}`);
+                    if(translatedText !== null) el.innerHTML = translatedText;
+                });
+
+                setTimeout(() => {
+                    mainContent.style.opacity = '1';
+                    navbar.style.opacity = '1';
+                    telemetry.style.opacity = '1';
+                    
+                    document.querySelectorAll('#home .decrypt-target').forEach(el => runDecrypt(el));
+                    document.getElementById('home').classList.add('active');
+
+                    initGSAPandLenis(); 
+                    startRealTelemetry();
+                }, 100);
+            }, 800);
+        }
+
+        async function fetchRealIP() {
+            try {
+                const res = await fetch('https://api.ipify.org?format=json');
+                const data = await res.json();
+                document.getElementById('tel-ip').innerText = `CLIENT IP: ${data.ip}`;
+            } catch(e) { document.getElementById('tel-ip').innerText = `CLIENT IP: SECURE_TUNNEL`; }
+        }
+        async function measureRealLatency() {
+            const start = performance.now();
+            try {
+                await fetch(window.location.href + '?ping=' + Date.now(), { method: 'HEAD', cache: 'no-store' });
+                const end = performance.now();
+                currentLatency = Math.round(end - start);
+                document.getElementById('tel-ping').innerText = `LATENCY: ${currentLatency}ms`;
+            } catch(e) { document.getElementById('tel-ping').innerText = `LATENCY: <1ms`; }
+        }
+        function startRealTelemetry() { fetchRealIP(); measureRealLatency(); setInterval(measureRealLatency, 5000); }
+
+        // --- 9. PARTICLE NETWORK ---
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray;
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, isPacket = false) {
+                this.x = x; this.y = y; this.directionX = directionX; this.directionY = directionY; this.size = size; this.isPacket = isPacket;
+                this.life = 100;
+            }
+            draw() {
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                let pColor = 'rgba(6, 182, 212, 0.4)';
+                if(document.body.classList.contains('defcon-mode')) pColor = 'rgba(239, 68, 68, 0.4)';
+                if(document.body.classList.contains('matrix-mode')) pColor = 'rgba(34, 197, 94, 0.4)';
+                
+                if(this.isPacket) {
+                    ctx.fillStyle = '#fff'; ctx.shadowBlur = 10; ctx.shadowColor = '#06b6d4';
+                } else {
+                    ctx.fillStyle = pColor; ctx.shadowBlur = 0;
+                }
+                ctx.fill();
+            }
+            update() {
+                if(this.isPacket) this.life--;
+                if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
+                if (this.y > canvas.height || this.y < 0) this.directionY = -this.directionY;
+                this.x += this.directionX; this.y += this.directionY;
+                this.draw();
+            }
+        }
+        function initParticles() {
+            particlesArray = [];
+            let numberOfParticles = Math.min(Math.floor((canvas.height * canvas.width) / 25000), 40);
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 0.5;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                particlesArray.push(new Particle(x, y, (Math.random() * 1) - 0.5, (Math.random() * 1) - 0.5, size));
+            }
+        }
+        function connectParticles() {
+            for (let a = 0; a < particlesArray.length; a++) {
+                if(particlesArray[a].isPacket) continue;
+                for (let b = a; b < particlesArray.length; b++) {
+                    if(particlesArray[b].isPacket) continue;
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + 
+                                   ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < 15000) {
+                        let opacityValue = 1 - (distance / 15000);
+                        let lColor = 'rgba(139, 92, 246,' + opacityValue * 0.2 + ')';
+                        if(document.body.classList.contains('defcon-mode')) lColor = 'rgba(220, 38, 38,' + opacityValue * 0.2 + ')';
+                        if(document.body.classList.contains('matrix-mode')) lColor = 'rgba(22, 163, 74,' + opacityValue * 0.2 + ')';
+                        ctx.strokeStyle = lColor; ctx.lineWidth = 1; ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y); ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
+                    }
+                }
+            }
+        }
+        function animateParticles() {
+            requestAnimationFrame(animateParticles);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                if(particlesArray[i].isPacket && particlesArray[i].life <= 0) {
+                    particlesArray.splice(i, 1); i--; 
+                }
+            }
+            connectParticles();
+        }
+        window.addEventListener('resize', () => { canvas.width = innerWidth; canvas.height = innerHeight; initParticles(); });
+        
+        window.addEventListener('click', (e) => {
+            if(e.target.closest('#navbar') || e.target.closest('#easter-egg-terminal') || e.target.closest('.glow-card')) return;
+            playTone(900, 'sine', 0.05, 0.02);
+            for(let i=0; i<3; i++) {
+                particlesArray.push(new Particle(e.clientX, e.clientY, (Math.random() - 0.5) * 15, (Math.random() - 0.5) * 15, 2, true));
+            }
+        });
+
+        // --- 10. DRAGGABLE TERMINAL ---
+        const terminal = document.getElementById('easter-egg-terminal');
+        const termInput = document.getElementById('term-input');
+        const termBody = document.getElementById('term-body');
+        const termHeader = document.getElementById('term-header');
+        
+        function toggleTerminal() {
+            terminal.classList.toggle('open');
+            if(terminal.classList.contains('open')) { termInput.focus(); playTone(600, 'square', 0.1, 0.05); }
+        }
+
+        document.getElementById('nav-term-btn').addEventListener('click', toggleTerminal);
+        document.addEventListener('keydown', (e) => { if (e.key === '`' || e.key === '~') { e.preventDefault(); toggleTerminal(); } });
+        document.getElementById('close-term').addEventListener('click', () => terminal.classList.remove('open'));
+
+        let isDragging = false, currentX, currentY, initialX, initialY, xOffset = 0, yOffset = 0;
+        termHeader.addEventListener('mousedown', dragStart);
+        window.addEventListener('mouseup', dragEnd);
+        window.addEventListener('mousemove', drag);
+
+        function dragStart(e) { if(e.target.id === 'close-term') return; initialX = e.clientX - xOffset; initialY = e.clientY - yOffset; isDragging = true; }
+        function dragEnd() { isDragging = false; }
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX; currentY = e.clientY - initialY;
+                xOffset = currentX; yOffset = currentY;
+                terminal.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px))`;
+            }
+        }
+
+        const initialTerminalHTML = termBody.innerHTML;
+        termInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = termInput.value.trim().toLowerCase();
+                if(!cmd) return;
+                
+                const newLog = document.createElement('div');
+                newLog.innerHTML = `<span class="text-cyan-400">root@portfolio:~$</span> ${cmd}`;
+                termBody.appendChild(newLog);
+
+                const response = document.createElement('div');
+                response.style.color = '#fff';
+                
+                if(cmd.startsWith('ping')) {
+                    const target = cmd.split(' ')[1] || '127.0.0.1';
+                    response.innerHTML = `Pinging ${target} with 32 bytes of data:<br>`;
+                    termBody.appendChild(response);
+                    
+                    let pings = 0;
+                    const pingInterval = setInterval(() => {
+                        const variation = Math.floor(Math.random() * 4) - 2;
+                        const pingTime = Math.max(1, currentLatency + variation);
+                        response.innerHTML += `Reply from ${target}: bytes=32 time=${pingTime}ms TTL=115<br>`;
+                        termBody.scrollTop = termBody.scrollHeight;
+                        pings++;
+                        if(pings >= 4) {
+                            clearInterval(pingInterval);
+                            response.innerHTML += `<br>Ping statistics for ${target}:<br>&nbsp;&nbsp;&nbsp;&nbsp;Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)<br>`;
+                            termBody.scrollTop = termBody.scrollHeight;
+                        }
+                    }, 800);
+                } else {
+                    switch(cmd) {
+                        case 'help': response.innerHTML = 'Commands: whoami, skills, clear, ping [host], ssh, exit'; break;
+                        case 'whoami': response.innerHTML = 'Amir Mohammad Amiri - Enterprise Network Architect.'; break;
+                        case 'skills': response.innerHTML = 'Loading modules... [Cisco, Fortinet, VMware, Linux, Security]. 100% loaded.'; break;
+                        case 'clear': termBody.innerHTML = initialTerminalHTML; break;
+                        case 'exit': terminal.classList.remove('open'); break;
+                        case 'ssh': 
+                            response.innerHTML = 'Initiating secure connection... Jumping to contact form.';
+                            setTimeout(() => { document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); terminal.classList.remove('open'); }, 1000);
+                            break;
+                        default: response.innerHTML = `Command not found: ${cmd}`;
+                    }
+                    if(cmd !== 'clear') termBody.appendChild(response);
+                }
+                
+                termInput.value = '';
+                termBody.scrollTop = termBody.scrollHeight;
+                playTone(400, 'square', 0.05, 0.02); 
+            }
+        });
+    </script>
+</body>
+</html>
