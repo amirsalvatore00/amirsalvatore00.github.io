@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fa" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- ================= SEO MASTERY ================= -->
-    <title>Amir Mohammad Amiri | امیرمحمد امیری</title>
-    <meta name="description" content="پورتفولیو و رزومه رسمی امیرمحمد امیری (Amir Mohammad Amiri). معمار شبکه و امنیت، متخصص سیسکو، فورتی‌نت و مجازی‌سازی. Enterprise Network Architect.">
-    <meta name="keywords" content="امیرمحمد امیری, امیر محمد امیری, amir mohammad amiri, Amir Mohammad Amiri, AmirMohammadAmiri, AmirMohammad Amiri, Amir mohamad amiri, معمار شبکه, مهندس شبکه, Network Architect, Cisco, Fortinet">
+    <!-- ================= THE ULTIMATE SEO MASTERY ================= -->
+    <title>Amir Mohammad Amiri | امیرمحمد امیری | Network Architect</title>
+    <meta name="description" content="وب‌سایت رسمی امیر محمد امیری (Amir Mohammad Amiri)، معمار شبکه، متخصص سیسکو، فورتی‌نت و مجازی‌سازی. AmirMohammad Amiri - Network and Security Engineer.">
+    <meta name="keywords" content="Amir Mohammad Amiri, AmirMohammad Amiri, amirmohammad amiri, amiri, amir mohammad, امیر محمد امیری, امیرمحمد امیری, امیری, Network Architect, مهندس شبکه, معمار شبکه">
     
-    <meta property="og:title" content="Amir Mohammad Amiri | Elite Network Architect">
-    <meta property="og:description" content="امیرمحمد امیری - طراح و معمار زیرساخت‌های حیاتی شبکه و امنیت سازمانی.">
+    <meta property="og:title" content="Amir Mohammad Amiri | امیرمحمد امیری">
+    <meta property="og:description" content="پورتفولیوی رسمی امیرمحمد امیری - طراح و معمار زیرساخت‌های حیاتی شبکه و امنیت سازمانی.">
+    <meta property="og:image" content="https://AmirMohammadAmiri.com/Amir%20Mohammad%20Amiri.jpg">
+    <meta property="og:url" content="https://AmirMohammadAmiri.com">
     <meta property="og:type" content="website">
 
-    <!-- TAB ICON (FAVICON) -->
     <link rel="icon" href="website-icon.jpg" type="image/jpeg">
 
     <script type="application/ld+json">
@@ -25,22 +26,25 @@
         "امیرمحمد امیری",
         "امیر محمد امیری",
         "amir mohammad amiri",
-        "AmirMohammadAmiri",
         "AmirMohammad Amiri",
-        "Amir mohamad amiri"
+        "AmirMohammadAmiri",
+        "amiri",
+        "amir mohammad",
+        "امیری"
       ],
       "jobTitle": "Enterprise Network & Security Architect",
       "knowsAbout": ["Cisco", "Fortinet", "Network Security", "VMware", "Penetration Testing"],
-      "url": "https://AmirMohammadAmiri.com"
+      "url": "https://AmirMohammadAmiri.com",
+      "image": "https://AmirMohammadAmiri.com/Amir%20Mohammad%20Amiri.jpeg",
+      "sameAs": [
+        "https://linkedin.com/in/amir-mohammad-amiri-940306360"
+      ]
     }
     </script>
-    <!-- ============================================== -->
+    <!-- ========================================================= -->
 
-    <!-- Fonts & Libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- GSAP & Lenis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
@@ -56,55 +60,50 @@
             --glow-spread: rgba(6, 182, 212, 0.3);
         }
 
+        /* ANTI-COPY PROTECTION */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: var(--bg-deep); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden; 
+            cursor: none; 
+            transition: background-color 0.8s ease;
+        }
+        body[dir="rtl"] { font-family: 'Vazirmatn', sans-serif; }
+
+        /* THEMES */
         body.defcon-mode {
             --bg-deep: #1a0505; --accent-cyan: #ef4444; --accent-purple: #dc2626;
             --glass-bg: rgba(40, 10, 10, 0.5); --glass-border: rgba(239, 68, 68, 0.2); --glow-spread: rgba(239, 68, 68, 0.4);
         }
-
         body.matrix-mode {
             --bg-deep: #000a00; --accent-cyan: #22c55e; --accent-purple: #16a34a;
             --glass-bg: rgba(0, 20, 0, 0.6); --glass-border: rgba(34, 197, 94, 0.3); --glow-spread: rgba(34, 197, 94, 0.4);
         }
-        body.matrix-mode .text-gray-300, body.matrix-mode .text-gray-400 { color: #86efac !important; }
 
-        /* Scroll Progress */
         #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent-cyan); z-index: 100000; width: 0%; box-shadow: 0 0 10px var(--accent-cyan); transition: background-color 0.5s; }
 
-        /* Base Resets */
         html.lenis, html.lenis body { height: auto; }
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-        .lenis.lenis-stopped { overflow: hidden; }
 
-        body { background-color: var(--bg-deep); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; cursor: none; transition: background-color 0.8s ease; }
-        body[dir="rtl"] { font-family: 'Vazirmatn', sans-serif; }
-
-        /* Background Layers (Z-Index: -10 to -2) */
         .noise-bg { position: fixed; inset: 0; z-index: -10; pointer-events: none; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); transition: opacity 0.8s; }
-        body.defcon-mode .noise-bg { opacity: 0.08; background-color: rgba(239, 68, 68, 0.1); }
-        body.matrix-mode .noise-bg { opacity: 0.1; background-color: rgba(34, 197, 94, 0.05); }
-
         #network-canvas, #matrix-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5; pointer-events: none; }
         #network-canvas { opacity: 0.5; transition: opacity 0.5s; }
         #matrix-canvas { opacity: 0; z-index: -6; }
-        body.matrix-mode #network-canvas { opacity: 0.1; }
-        body.matrix-mode #matrix-canvas { opacity: 0.4; }
 
-        /* Cursors (Z-Index: 99999) */
-        .cursor-dot { position: fixed; top: 0; left: 0; width: 6px; height: 6px; background-color: var(--accent-cyan); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; box-shadow: 0 0 10px var(--accent-cyan); transition: background-color 0.3s; }
-        .cursor-outline { position: fixed; top: 0; left: 0; width: 36px; height: 36px; border: 1px solid rgba(6, 182, 212, 0.5); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999998; pointer-events: none; transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s, border-radius 0.2s; }
-        .cursor-hover .cursor-outline { width: 50px; height: 50px; background-color: rgba(6, 182, 212, 0.1); border-color: var(--accent-cyan); border-radius: 10px; transform: translate(-50%, -50%) rotate(45deg); backdrop-filter: grayscale(100%); }
-        
-        body.defcon-mode .cursor-dot { background-color: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); }
-        body.defcon-mode .cursor-outline { border-color: var(--accent-cyan); }
-        body.matrix-mode .cursor-dot { background-color: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); }
-        body.matrix-mode .cursor-outline { border-color: var(--accent-cyan); }
+        /* MINIMAL CREATIVE CURSOR */
+        .cursor-dot { position: fixed; top: 0; left: 0; width: 6px; height: 6px; background-color: var(--accent-cyan); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; box-shadow: 0 0 10px var(--accent-cyan); transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s, border 0.3s; }
+        .cursor-hover .cursor-dot { width: 45px; height: 45px; background-color: rgba(6, 182, 212, 0.05); border: 1.5px solid var(--accent-cyan); box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); backdrop-filter: grayscale(80%) blur(1px); }
+        @media (pointer: coarse) { body { cursor: auto; } .cursor-dot { display: none !important; } } /* Disable custom cursor on mobile */
 
-        /* Telemetry Box (Z-Index: 50) */
         #telemetry-box { position: fixed; bottom: 20px; left: 20px; z-index: 50; font-family: 'Courier New', Courier, monospace; font-size: 10px; color: var(--accent-cyan); background: rgba(3, 7, 18, 0.7); border: 1px solid var(--glass-border); padding: 10px; border-radius: 8px; backdrop-filter: blur(8px); pointer-events: none; opacity: 0; transition: opacity 2s ease 5s; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
         #telemetry-box p { margin: 2px 0; }
         
-        /* Intro Screen (Z-Index: 9999) */
         #intro-screen { position: fixed; inset: 0; background: var(--bg-deep); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; transition: opacity 0.8s cubic-bezier(0.87, 0, 0.13, 1); }
         .network-topology { width: 100%; max-width: 1000px; height: 60vh; position: relative; animation: camera-pan 4.5s ease-in-out forwards; }
         @keyframes camera-pan { 0% { transform: scale(0.9) translateY(-20px); } 100% { transform: scale(1) translateY(0px); } }
@@ -128,7 +127,6 @@
         .intro-flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 5; pointer-events: none; animation: flash-bang 1s ease-out 4.2s forwards; }
         @keyframes flash-bang { 0% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: 0; } }
 
-        /* Navbar (Z-Index: 100) */
         .glass-nav { background: rgba(3, 7, 18, 0.4); backdrop-filter: blur(16px); border-bottom: 1px solid var(--glass-border); transition: all 0.4s ease; z-index: 100; }
         .glass-nav.scrolled { background: rgba(3, 7, 18, 0.85); padding-top: 0.5rem; padding-bottom: 0.5rem; border-bottom-color: var(--glass-border); }
         .nav-link { position: relative; transition: color 0.3s; }
@@ -136,7 +134,6 @@
         .nav-link:hover::after { width: 100%; }
         body[dir="rtl"] .nav-link::after { right: 0; left: auto; }
 
-        /* Glass Panels */
         .glass-panel {
             background: var(--glass-bg); backdrop-filter: blur(16px) saturate(180%);
             border: 1px solid var(--glass-border); border-radius: 1.5rem;
@@ -153,28 +150,23 @@
         .glass-panel:hover { transform: translateY(-5px); border-color: var(--accent-cyan); box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 20px var(--glow-spread); }
         .glass-panel > * { position: relative; z-index: 2; }
 
-        /* Tags & Inputs */
         .skill-tag { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; color: #cbd5e1; transition: all 0.3s; position: relative; overflow: hidden; display: inline-block; }
         .skill-tag:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-cyan); color: #fff; transform: scale(1.05); box-shadow: 0 0 15px var(--glow-spread); }
         .cyber-input { width: 100%; background: rgba(15, 23, 42, 0.5) !important; border: 1px solid var(--glass-border); color: white !important; padding: 1rem; border-radius: 0.75rem; transition: all 0.3s; outline: none; backdrop-filter: blur(4px); }
         .cyber-input:focus { border-color: var(--accent-cyan); box-shadow: 0 0 15px var(--glow-spread); background: rgba(15, 23, 42, 0.8) !important; }
 
-        /* Image Subtle & Elegant Glow */
         .img-container { position: relative; border-radius: 2rem; display: inline-block; z-index: 10; }
         .img-container::after { content: ''; position: absolute; inset: -2px; border-radius: 2rem; background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple)); z-index: -1; filter: blur(15px); opacity: 0; transition: opacity 0.4s ease; }
         .img-container:hover::after { opacity: 0.6; }
         .hero-img { border-radius: 2rem; object-fit: cover; border: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; display: block; transition: transform 0.4s ease; }
         .img-container:hover .hero-img { transform: scale(1.01); border-color: rgba(255,255,255,0.3); }
 
-        /* Language Overlay */
         #lang-overlay { position: fixed; inset: 0; background: #030712; z-index: 90000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); display: none; }
         .magnetic { transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); display: inline-block; }
 
-        /* Optimized Text Repulsion */
-        .repel-text span { display: inline-block; transition: transform 0.2s ease-out, color 0.3s; white-space: pre; }
+        .repel-text span { display: inline-block; transition: transform 0.2s ease-out, color 0.3s; }
         .repel-text span.repelled { color: var(--accent-cyan); text-shadow: 0 0 15px var(--accent-cyan); }
 
-        /* Marquee Ribbon */
         .marquee-wrapper { width: 100vw; position: relative; margin-left: -1.5rem; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 1.5rem 0; z-index: 15; overflow: hidden; margin-top: 2rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .marquee-content { display: flex; width: max-content; animation: marquee 30s linear infinite; }
         body[dir="rtl"] .marquee-content { animation-direction: reverse; }
@@ -184,9 +176,8 @@
 
         .text-gradient { background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Draggable Terminal */
         #easter-egg-terminal {
-            position: fixed; top: 50%; left: 50%; width: 480px; height: 380px;
+            position: fixed; top: 50%; left: 50%; width: 480px; max-width: 90vw; height: 380px;
             background: rgba(10, 10, 10, 0.95); border: 1px solid var(--accent-cyan);
             border-radius: 10px; z-index: 1000; display: flex; flex-direction: column;
             box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 15px var(--glow-spread);
@@ -202,10 +193,9 @@
         .term-input { background: transparent; border: none; color: white; outline: none; flex-grow: 1; font-family: inherit; font-size: 0.95rem; }
 
         .nav-controls { display: flex; gap: 1rem; align-items: center; }
-        .toggle-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: none; transition: 0.3s; font-size: 1.1rem; color: #94a3b8; }
+        .toggle-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; font-size: 1.1rem; color: #94a3b8; }
         .toggle-btn:hover { background: rgba(255,255,255,0.1); border-color: var(--accent-cyan); box-shadow: 0 0 10px var(--glow-spread); transform: scale(1.1); color: #fff; }
 
-        /* High-Tech Contact Cards */
         .contact-card-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(6, 182, 212, 0.1); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); font-size: 1.5rem; border: 1px solid rgba(6, 182, 212, 0.3); transition: 0.3s; flex-shrink: 0; }
         .glow-card:hover .contact-card-icon { background: var(--accent-cyan); color: #000; box-shadow: 0 0 15px var(--accent-cyan); transform: scale(1.1); }
         
@@ -213,7 +203,7 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="custom-cursor-area overflow-hidden">
+<body class="custom-cursor-area overflow-hidden" oncontextmenu="return false;">
 
     <div id="scroll-progress"></div>
 
@@ -222,9 +212,8 @@
     <canvas id="network-canvas"></canvas>
     
     <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
 
-    <div id="telemetry-box">
+    <div id="telemetry-box" class="hidden md:block">
         <p class="font-bold text-white mb-2">SYS_TELEMETRY_V2</p>
         <p id="tel-ip">CLIENT IP: FETCHING...</p>
         <p id="tel-ping">LATENCY: CALC...</p>
@@ -286,7 +275,7 @@
     <nav id="navbar" class="fixed top-0 w-full z-50 glass-nav hidden opacity-0 transition-opacity duration-1000">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center transition-all duration-300">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-900/50 hover-trigger cursor-default">
-                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse-slow indicator-dot"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse-slow indicator-dot-static"></span>
                 <span class="text-xs font-semibold tracking-wide text-gray-300 t-elem decrypt-target" data-en="Available for Enterprise Projects" data-fa="آماده برای پروژه‌های سازمانی" data-de="Verfügbar für Unternehmensprojekte">Available for Enterprise Projects</span>
             </div>
 
@@ -316,17 +305,17 @@
         <!-- SECTION 1: HOME -->
         <section id="home" class="min-h-[85vh] flex flex-col-reverse md:flex-row items-center justify-between gap-12 pt-10 mb-16 reveal">
             <div class="flex-1 space-y-6 text-center md:text-left rtl:md:text-right relative z-10">
-                <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight">
-                    <span class="t-elem block text-gray-300 text-3xl md:text-4xl mb-2 font-light decrypt-target" data-en="I am" data-fa="من" data-de="Ich bin">I am</span>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight">
+                    <span class="t-elem block text-gray-300 text-2xl sm:text-3xl md:text-4xl mb-2 font-light decrypt-target" data-en="I am" data-fa="من" data-de="Ich bin">I am</span>
                     
-                    <!-- EN/DE Name with Repel Effect -->
-                    <span class="en-de-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target repel-text t-elem" id="name-repel" data-en="Amir Mohammad" data-de="Amir Mohammad" data-fa="Amir Mohammad">Amir Mohammad</span>
+                    <!-- EN/DE Name with Repel Effect & Whitespace no-wrap for mobile -->
+                    <span class="en-de-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target repel-text t-elem whitespace-nowrap" id="name-repel" data-en="Amir Mohammad" data-de="Amir Mohammad" data-fa="Amir Mohammad">Amir Mohammad</span>
                     
-                    <!-- Persian Name without Repel Effect (Hidden in EN/DE, shown in FA) -->
-                    <span class="fa-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target t-elem hidden" data-fa="امیرمحمد امیری">امیرمحمد امیری</span>
+                    <!-- Persian Name without Repel Effect (Hidden in EN/DE, shown in FA) & Whitespace no-wrap -->
+                    <span class="fa-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target t-elem hidden whitespace-nowrap" data-fa="امیرمحمد امیری">امیرمحمد امیری</span>
                     <br>
                     
-                    <span class="t-elem text-white" data-en="" data-fa="هستم؛ " data-de=""></span><span class="text-gradient t-elem drop-shadow-[0_0_20px_rgba(6,182,212,0.4)] decrypt-target" data-en="Network Architect." data-fa="معمار شبکه." data-de="Netzwerkarchitekt.">Network Architect.</span>
+                    <span class="t-elem text-white" data-en="" data-fa="هستم؛ " data-de=""></span><span class="text-gradient t-elem drop-shadow-[0_0_20px_rgba(6,182,212,0.4)] decrypt-target whitespace-nowrap" data-en="Network Architect." data-fa="معمار شبکه." data-de="Netzwerkarchitekt.">Network Architect.</span>
                 </h1>
                 
                 <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto md:mx-0 t-elem backdrop-blur-sm bg-gray-900/20 p-4 rounded-xl border border-gray-800/50"
@@ -336,12 +325,12 @@
                 </p>
 
                 <div class="pt-6 flex justify-center md:justify-start gap-4">
-                    <a href="#services" class="magnetic hover-trigger px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold transition-colors t-elem" style="box-shadow: 0 0 20px var(--glow-spread);" data-en="My Services" data-fa="خدمات من" data-de="Meine Dienste">My Services</a>
-                    <a href="#contact" class="magnetic hover-trigger px-8 py-4 bg-transparent border border-gray-600 hover:border-gray-300 text-white rounded-xl font-bold transition-colors t-elem backdrop-blur-md" data-en="Hire Me" data-fa="همکاری با من" data-de="Mich Einstellen">Hire Me</a>
+                    <a href="#services" class="magnetic hover-trigger px-6 py-3 md:px-8 md:py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold transition-colors t-elem" style="box-shadow: 0 0 20px var(--glow-spread);" data-en="My Services" data-fa="خدمات من" data-de="Meine Dienste">My Services</a>
+                    <a href="#contact" class="magnetic hover-trigger px-6 py-3 md:px-8 md:py-4 bg-transparent border border-gray-600 hover:border-gray-300 text-white rounded-xl font-bold transition-colors t-elem backdrop-blur-md" data-en="Hire Me" data-fa="همکاری با من" data-de="Mich Einstellen">Hire Me</a>
                 </div>
             </div>
             
-            <div class="w-72 h-72 md:w-[450px] md:h-[450px] flex-shrink-0 relative mx-auto md:mx-0">
+            <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-[450px] md:h-[450px] flex-shrink-0 relative mx-auto md:mx-0">
                 <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-3xl blur-3xl opacity-30 animate-pulse glow-bg"></div>
                 <div class="img-container w-full h-full">
                     <img src="Amir Mohammad Amiri.jpeg" alt="امیرمحمد امیری - Amir Mohammad Amiri - Network Architect" title="Amir Mohammad Amiri" class="relative hero-img w-full h-full hover-trigger shadow-2xl">
@@ -364,7 +353,7 @@
             </div>
         </div>
 
-        <!-- NEW SECTION: SERVICES (Clicking cards fills the form and scrolls to it) -->
+        <!-- NEW SECTION: SERVICES -->
         <section id="services" class="mb-32 reveal scroll-trigger-panel">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-4xl font-black mb-4 t-elem decrypt-on-scroll" data-en="Professional Services" data-fa="خدمات تخصصی" data-de="Professionelle Dienstleistungen">Professional Services</h2>
@@ -373,7 +362,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Service 1 -->
-                <a href="#contact" onclick="prefillForm('درخواست: پشتیبانی و نگهداری شبکه', 'Request: Network Support & Maintenance', 'Anfrage: Netzwerkunterstützung')" class="glass-panel glow-card p-8 border-t-4 border-t-cyan-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: پشتیبانی و نگهداری شبکه', 'Request: Network Support & Maintenance', 'Anfrage: Netzwerkunterstützung')" class="glass-panel glow-card p-8 border-t-4 border-t-cyan-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">⚙️</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Network Support & Maintenance" data-fa="پشتیبانی و نگهداری شبکه" data-de="Netzwerkunterstützung & Wartung">Network Support & Maintenance</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Ensuring stability and rapid fault resolution. 24/7 monitoring, remote/on-site support, and periodic maintenance." data-fa="حفظ پایداری و رفع سریع اختلالات سرویس‌ها. مانیتورینگ ۲۴/۷، مراجعه حضوری و ریموت، و نگهداری دوره‌ای." data-de="Gewährleistung der Stabilität. 24/7-Überwachung, Remote-/Vor-Ort-Support und regelmäßige Wartung.">Ensuring stability and rapid fault resolution. 24/7 monitoring, remote/on-site support, and periodic maintenance.</p>
@@ -381,7 +370,7 @@
                 </a>
                 
                 <!-- Service 2 -->
-                <a href="#contact" onclick="prefillForm('درخواست: امنیت شبکه و تست نفوذ', 'Request: Security & Penetration Testing', 'Anfrage: Sicherheit & Penetrationstests')" class="glass-panel glow-card p-8 border-t-4 border-t-red-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: امنیت شبکه و تست نفوذ', 'Request: Security & Penetration Testing', 'Anfrage: Sicherheit & Penetrationstests')" class="glass-panel glow-card p-8 border-t-4 border-t-red-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Security & Penetration Testing" data-fa="امنیت شبکه و تست نفوذ" data-de="Sicherheit & Penetrationstests">Security & Penetration Testing</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Precise vulnerability assessments, periodic pentests, and securing sensitive infrastructure against cyber attacks." data-fa="ارزیابی دقیق آسیب‌پذیری‌ها، تست نفوذ دوره‌ای و ایمن‌سازی کامل زیرساخت‌های حساس سازمانی در برابر حملات سایبری." data-de="Präzise Schwachstellenbewertungen, regelmäßige Pentests und Sicherung sensibler Infrastrukturen.">Precise vulnerability assessments, periodic pentests, and securing sensitive infrastructure against cyber attacks.</p>
@@ -389,7 +378,7 @@
                 </a>
                 
                 <!-- Service 3 -->
-                <a href="#contact" onclick="prefillForm('درخواست: اجرای اکتیو و راه‌اندازی شبکه', 'Request: Active Network Setup', 'Anfrage: Aktive Netzwerkeinrichtung')" class="glass-panel glow-card p-8 border-t-4 border-t-blue-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: اجرای اکتیو و راه‌اندازی شبکه', 'Request: Active Network Setup', 'Anfrage: Aktive Netzwerkeinrichtung')" class="glass-panel glow-card p-8 border-t-4 border-t-blue-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🔌</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Active Network Setup" data-fa="اجرای اکتیو و راه‌اندازی شبکه" data-de="Aktive Netzwerkeinrichtung">Active Network Setup</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Installation, configuration, and deployment of Cisco equipment, servers, and routers with standard architecture." data-fa="نصب، پیکربندی و راه‌اندازی تخصصی تجهیزات سیسکو، میکروتیک و سرورها با معماری استاندارد و تضمین پایداری." data-de="Installation, Konfiguration und Bereitstellung von Cisco-Geräten, Servern und Routern mit Standardarchitektur.">Installation, configuration, and deployment of Cisco equipment, servers, and routers with standard architecture.</p>
@@ -397,7 +386,7 @@
                 </a>
                 
                 <!-- Service 4 -->
-                <a href="#contact" onclick="prefillForm('درخواست: فایروال و کنترل دسترسی', 'Request: Firewall & Access Control', 'Anfrage: Firewall & Zugriffskontrolle')" class="glass-panel glow-card p-8 border-t-4 border-t-purple-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: فایروال و کنترل دسترسی', 'Request: Firewall & Access Control', 'Anfrage: Firewall & Zugriffskontrolle')" class="glass-panel glow-card p-8 border-t-4 border-t-purple-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🧱</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Firewall & Access Control" data-fa="فایروال و کنترل دسترسی" data-de="Firewall & Zugriffskontrolle">Firewall & Access Control</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Hardware firewall implementation (FortiGate), network segmentation (VLAN), and Zero-Trust access policy enforcement." data-fa="پیاده‌سازی فایروال‌های سخت‌افزاری پیشرفته (مانند FortiGate)، تفکیک ترافیک شبکه (VLAN) و اعمال سیاست‌های دسترسی." data-de="Implementierung von Hardware-Firewalls (FortiGate), Netzwerksegmentierung (VLAN) und Zero-Trust-Zugriffsrichtlinien.">Hardware firewall implementation (FortiGate), network segmentation (VLAN), and Zero-Trust access policy enforcement.</p>
@@ -405,7 +394,7 @@
                 </a>
                 
                 <!-- Service 5 -->
-                <a href="#contact" onclick="prefillForm('درخواست: طراحی سایت شرکتی و فروشگاهی', 'Request: Web Design & E-Commerce', 'Anfrage: Webdesign & E-Commerce')" class="glass-panel glow-card p-8 border-t-4 border-t-green-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: طراحی سایت شرکتی و فروشگاهی', 'Request: Web Design & E-Commerce', 'Anfrage: Webdesign & E-Commerce')" class="glass-panel glow-card p-8 border-t-4 border-t-green-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">💻</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Web Design & E-Commerce" data-fa="طراحی سایت فروشگاهی و شرکتی" data-de="Webdesign & E-Commerce">Web Design & E-Commerce</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Designing ultra-fast, secure, and responsive websites with payment gateways and scalable infrastructure." data-fa="طراحی وب‌سایت‌های فوق‌سریع، امن و واکنش‌گرا با درگاه پرداخت، سئو قدرتمند و زیرساخت آماده برای فروش." data-de="Entwurf ultraschneller, sicherer und reaktionsschneller Websites mit Zahlungsgateways und skalierbarer Infrastruktur.">Designing ultra-fast, secure, and responsive websites with payment gateways and scalable infrastructure.</p>
@@ -413,7 +402,7 @@
                 </a>
                 
                 <!-- Service 6 -->
-                <a href="#contact" onclick="prefillForm('درخواست: خدمات IT کسب‌وکارهای کوچک', 'Request: Small Business IT Services', 'Anfrage: IT-Services für Kleinunternehmen')" class="glass-panel glow-card p-8 border-t-4 border-t-yellow-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: خدمات IT کسب‌وکارهای کوچک', 'Request: Small Business IT Services', 'Anfrage: IT-Services für Kleinunternehmen')" class="glass-panel glow-card p-8 border-t-4 border-t-yellow-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🏢</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Small Business IT Services" data-fa="خدمات IT کسب‌وکارهای کوچک" data-de="IT-Services für Kleinunternehmen">Small Business IT Services</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Professional PC assembly, Windows & specialized software installation, original antivirus setup, and IT troubleshooting." data-fa="اسمبل سیستم‌های حرفه‌ای، نصب ویندوز و نرم‌افزارهای تخصصی، نصب آنتی‌ویروس اورجینال و رفع مشکلات اداری." data-de="Professionelle PC-Montage, Installation von Windows und Spezialsoftware, Einrichtung von Antivirenprogrammen.">Professional PC assembly, Windows & specialized software installation, original antivirus setup, and IT troubleshooting.</p>
@@ -421,7 +410,7 @@
                 </a>
                 
                 <!-- Service 7 -->
-                <a href="#contact" onclick="prefillForm('درخواست: راه‌اندازی VoIP و تلفن تحت شبکه', 'Request: VoIP & IP Telephony', 'Anfrage: VoIP & IP-Telefonie')" class="glass-panel glow-card p-8 border-t-4 border-t-pink-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: راه‌اندازی VoIP و تلفن تحت شبکه', 'Request: VoIP & IP Telephony', 'Anfrage: VoIP & IP-Telefonie')" class="glass-panel glow-card p-8 border-t-4 border-t-pink-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">📞</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="VoIP & IP Telephony" data-fa="راه‌اندازی VoIP و تلفن تحت شبکه" data-de="VoIP & IP-Telefonie">VoIP & IP Telephony</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="Setup of IP PBX, internal extensions, call queues, IVR (auto-attendant), and call recording systems." data-fa="راه‌اندازی مرکز تلفن IP، داخلی‌ها، صف تماس، منشی تلفنی دیجیتال (IVR)، ضبط مکالمات و سیستم گزارش‌گیری." data-de="Einrichtung von IP-PBX, internen Nebenstellen, Warteschlangen, IVR und Anrufaufzeichnungssystemen.">Setup of IP PBX, internal extensions, call queues, IVR (auto-attendant), and call recording systems.</p>
@@ -429,7 +418,7 @@
                 </a>
                 
                 <!-- Service 8 -->
-                <a href="#contact" onclick="prefillForm('درخواست: مجازی‌سازی و زیرساخت سرور', 'Request: Virtualization & Servers', 'Anfrage: Virtualisierung & Server')" class="glass-panel glow-card p-8 border-t-4 border-t-orange-500 group block hover:cursor-none">
+                <a href="#contact" onclick="prefillForm('درخواست: مجازی‌سازی و زیرساخت سرور', 'Request: Virtualization & Servers', 'Anfrage: Virtualisierung & Server')" class="glass-panel glow-card p-8 border-t-4 border-t-orange-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🗄️</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Virtualization & Servers" data-fa="مجازی‌سازی و زیرساخت سرور" data-de="Virtualisierung & Server">Virtualization & Servers</h3>
                     <p class="text-sm text-gray-400 leading-relaxed t-elem" data-en="VMware vSphere/ESXi deployment, High Availability clusters, and Dell/HPE server hardware configurations." data-fa="پیاده‌سازی VMware vSphere/ESXi، کلاسترهای HA، راه‌اندازی سیستم بکاپ‌گیری خودکار و پیکربندی سخت‌افزاری." data-de="Bereitstellung von VMware vSphere, Hochverfügbarkeitsclustern und Dell/HPE-Server-Hardwarekonfigurationen.">VMware vSphere/ESXi deployment, High Availability clusters, and Dell/HPE server hardware configurations.</p>
@@ -440,19 +429,19 @@
 
         <!-- COMING SOON MODULES -->
         <section id="coming-soon" class="mb-32 grid grid-cols-1 md:grid-cols-3 gap-8 reveal scroll-trigger-panel text-center">
-            <div id="products" class="glass-panel glow-card flex flex-col items-center justify-center p-10">
+            <div id="products" class="glass-panel glow-card flex flex-col items-center justify-center p-10 hover-trigger">
                 <div class="text-5xl mb-4 text-cyan-400">📦</div>
                 <h3 class="text-2xl font-bold text-white mb-2 t-elem decrypt-on-scroll" data-en="Products" data-fa="محصولات" data-de="Produkte">Products</h3>
                 <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Store module is currently under construction. Exciting tools coming soon." data-fa="فروشگاه در حال توسعه است. به زودی محصولات تخصصی در این بخش قرار می‌گیرد." data-de="Das Shop-Modul befindet sich im Aufbau. Spannende Tools folgen in Kürze.">Store module is currently under construction. Exciting tools coming soon.</p>
                 <span class="skill-tag mt-6 t-elem" data-en="Coming Soon" data-fa="به زودی" data-de="Demnächst">Coming Soon</span>
             </div>
-            <div id="portfolio" class="glass-panel glow-card flex flex-col items-center justify-center p-10 border-cyan-500/30 border">
+            <div id="portfolio" class="glass-panel glow-card flex flex-col items-center justify-center p-10 border-cyan-500/30 border hover-trigger">
                 <div class="text-5xl mb-4 text-purple-400">📁</div>
                 <h3 class="text-2xl font-bold text-white mb-2 t-elem decrypt-on-scroll" data-en="Portfolio" data-fa="نمونه‌کارها" data-de="Portfolio">Portfolio</h3>
                 <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Curating my best enterprise architecture projects and designs to showcase here." data-fa="در حال مستندسازی و گردآوری بهترین پروژه‌ها و معماری‌های شبکه‌ام برای نمایش در اینجا هستم." data-de="Ich kuratiere meine besten Unternehmensarchitekturprojekte, um sie hier zu präsentieren.">Curating my best enterprise architecture projects and designs to showcase here.</p>
                 <span class="skill-tag mt-6 t-elem" data-en="Coming Soon" data-fa="به زودی" data-de="Demnächst">Coming Soon</span>
             </div>
-            <div id="blog" class="glass-panel glow-card flex flex-col items-center justify-center p-10">
+            <div id="blog" class="glass-panel glow-card flex flex-col items-center justify-center p-10 hover-trigger">
                 <div class="text-5xl mb-4 text-green-400">📝</div>
                 <h3 class="text-2xl font-bold text-white mb-2 t-elem decrypt-on-scroll" data-en="Blog" data-fa="وبلاگ" data-de="Blog">Blog</h3>
                 <p class="text-gray-400 text-sm mt-2 t-elem" data-en="Technical articles on Zero-Trust, routing, and modern infrastructure will be published here." data-fa="مقاله‌های تخصصی در زمینه شبکه، امنیت، مسیريابی و فناوری‌های روز به زودی منتشر خواهد شد." data-de="Hier werden technische Artikel zu Zero-Trust, Routing und moderner Infrastruktur veröffentlicht.">Technical articles on Zero-Trust, routing, and modern infrastructure will be published here.</p>
@@ -479,13 +468,14 @@
             </div>
         </section>
 
-        <!-- SECTION: EXPERIENCE -->
+        <!-- SECTION: EXPERIENCE (Reverted to perfectly centered line version) -->
         <section id="experience" class="mb-32 reveal scroll-trigger-panel">
             <h2 class="text-3xl font-black mb-10 flex items-center gap-4 t-elem decrypt-on-scroll" data-en="Professional Experience" data-fa="سوابق کاری" data-de="Berufserfahrung">
                 <span class="w-10 h-1 bg-purple-500 rounded-full"></span> Professional Experience
             </h2>
             
             <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:to-purple-500 timeline-line">
+                
                 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-gray-900 bg-cyan-500 shadow-[0_0_20px_var(--glow-spread)] md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 flex-shrink-0"></div>
                     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-panel glow-card p-6">
@@ -530,6 +520,7 @@
                              data-de="<p class='mb-3'>Übernahme eines fehlerhaften Netzwerks. In weniger als einem Monat wurde die gesamte Topologie nach dem Cisco-Dreischichtenmodell von Grund auf neu gestaltet.</p><p class='mb-3'>Implementierung isolierter VLANs mit strengen Layer-3-ACLs.</p><p class='mb-3'>Erzielte 100%ige Stabilität der klinischen Dienste und sicherte sensible Patientendaten. Standardisierung aller Racks und Dokumentationen.</p><p class='text-cyan-400 italic'>Weitere Details auf meinem LinkedIn-Profil...</p>"></div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -607,7 +598,7 @@
                 <!-- Info Cards Left -->
                 <div class="flex flex-col gap-6 lg:col-span-1">
                     
-                    <a href="tel:09963966631" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                    <a href="tel:09963966631" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon">📞</div>
                         <div>
                             <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="Phone" data-fa="تلفن" data-de="Telefon">Phone</div>
@@ -615,8 +606,7 @@
                         </div>
                     </a>
                     
-                    <!-- NEW WHATSAPP BUTTON -->
-                    <a href="https://wa.me/989963966631" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                    <a href="https://wa.me/989963966631" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon" style="color: #22c55e; border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.1);">💬</div>
                         <div>
                             <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="WhatsApp" data-fa="واتس‌اپ" data-de="WhatsApp">WhatsApp</div>
@@ -624,7 +614,7 @@
                         </div>
                     </a>
                     
-                    <a href="mailto:amirsalvatorenet@gmail.com" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                    <a href="mailto:amirsalvatorenet@gmail.com" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon">✉️</div>
                         <div>
                             <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="Email" data-fa="ایمیل" data-de="E-Mail">Email</div>
@@ -632,8 +622,7 @@
                         </div>
                     </a>
 
-                    <!-- UPDATED LINKEDIN URL -->
-                    <a href="https://linkedin.com/in/amir-mohammad-amiri-940306360" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-none" style="padding: 1.5rem;">
+                    <a href="https://linkedin.com/in/amir-mohammad-amiri-940306360" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon">🔗</div>
                         <div>
                             <div class="text-xs text-gray-400 uppercase tracking-widest">LinkedIn</div>
@@ -644,7 +633,6 @@
 
                 <!-- Form Right -->
                 <div class="glass-panel glow-card p-8 md:p-12 lg:col-span-2">
-                    <!-- Formspree Endpoint Added Here -->
                     <form action="https://formspree.io/f/mljerava" method="POST" class="flex flex-col gap-6 relative z-10">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex flex-col gap-2">
@@ -696,6 +684,14 @@
 
     <!-- Scripts -->
     <script>
+        // --- ANTI COPY JAVASCRIPT ---
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.ctrlKey && (event.key === 'c' || event.key === 'u' || event.key === 'a' || event.key === 's' || event.key === 'p')) {
+                event.preventDefault();
+            }
+        });
+
         // --- Custom Prefill Form Script for Services ---
         function prefillForm(textFa, textEn, textDe) {
             const currentLang = localStorage.getItem('siteLang') || 'fa';
@@ -709,7 +705,6 @@
             }
         }
 
-        // --- 1. ASCII ART IN CONSOLE ---
         console.log(`
   █████╗ ███╗   ███╗██╗██████╗ 
  ██╔══██╗████╗ ████║██║██╔══██╗
@@ -720,7 +715,7 @@
  Enterprise Network Architect
         `);
 
-        // --- 2. AUDIO ENGINE ---
+        // --- AUDIO ENGINE ---
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let isMuted = true;
         
@@ -750,7 +745,7 @@
             el.addEventListener('keydown', () => playTone(400, 'triangle', 0.03, 0.01));
         });
 
-        // --- 3. THEME TOGGLES & KONAMI CODE (MATRIX RAIN) ---
+        // --- THEME TOGGLES & KONAMI CODE ---
         const defconToggle = document.getElementById('defcon-toggle');
         defconToggle.addEventListener('click', () => {
             document.body.classList.remove('matrix-mode');
@@ -809,7 +804,7 @@
             }, 33);
         }
 
-        // --- 4. SAFE TEXT REPULSION ---
+        // --- SAFE TEXT REPULSION ---
         const repelText = document.getElementById('name-repel');
         if(repelText) {
             const originalText = repelText.innerText;
@@ -847,7 +842,7 @@
             });
         }
 
-        // --- 5. DECRYPTION EFFECT ---
+        // --- DECRYPTION EFFECT ---
         const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*<>";
         function runDecrypt(element) {
             if(element.id === 'name-repel') return; 
@@ -865,11 +860,8 @@
             }, 30);
         }
 
-        // --- 6. SCROLL PROGRESS & GSAP & LENIS (SMOOTH SCROLL) ---
+        // --- SCROLL PROGRESS & GSAP ---
         function initGSAPandLenis() {
-            document.body.classList.remove('overflow-hidden');
-            document.documentElement.classList.remove('overflow-hidden');
-
             const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => { lenis.raf(time * 1000); });
@@ -901,7 +893,7 @@
             });
         }
 
-        // --- 7. CORE LOGIC (Cursor, Hover, Intro) ---
+        // --- CORE LOGIC ---
         window.addEventListener('DOMContentLoaded', () => {
             initParticles(); animateParticles();
             setTimeout(() => {
@@ -915,14 +907,12 @@
         });
 
         const cursorDot = document.getElementById('cursor-dot');
-        const cursorOutline = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', (e) => {
             const posX = e.clientX; const posY = e.clientY;
             cursorDot.style.left = `${posX}px`; cursorDot.style.top = `${posY}px`;
-            cursorOutline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 150, fill: "forwards" });
         });
         
-        document.querySelectorAll('a, button, input, textarea, .hover-trigger, .skill-tag, .term-header').forEach(el => {
+        document.querySelectorAll('a, button, input, textarea, .hover-trigger, .skill-tag, .term-header, .cursor-pointer').forEach(el => {
             el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
@@ -956,7 +946,7 @@
             else nav.classList.remove('scrolled');
         });
 
-        // --- 8. LANGUAGE INIT & REAL TELEMETRY ---
+        // --- LANGUAGE INIT ---
         let currentLatency = 10;
         function initSite(lang) {
             localStorage.setItem('siteLang', lang);
@@ -975,7 +965,6 @@
                 if(lang === 'fa') { document.body.setAttribute('dir', 'rtl'); } 
                 else { document.body.setAttribute('dir', 'ltr'); }
 
-                // مدیریت نمایش نام بر اساس زبان برای جلوگیری از به هم ریختگی افکت Repel در فارسی
                 const enDeName = document.querySelector('.en-de-name');
                 const faName = document.querySelector('.fa-name');
                 if (lang === 'fa') {
@@ -1024,7 +1013,7 @@
         }
         function startRealTelemetry() { fetchRealIP(); measureRealLatency(); setInterval(measureRealLatency, 5000); }
 
-        // --- 9. PARTICLE NETWORK ---
+        // --- PARTICLE NETWORK ---
         const canvas = document.getElementById('network-canvas');
         const ctx = canvas.getContext('2d');
         let particlesArray;
@@ -1105,7 +1094,7 @@
             }
         });
 
-        // --- 10. DRAGGABLE TERMINAL ---
+        // --- DRAGGABLE TERMINAL ---
         const terminal = document.getElementById('easter-egg-terminal');
         const termInput = document.getElementById('term-input');
         const termBody = document.getElementById('term-body');
