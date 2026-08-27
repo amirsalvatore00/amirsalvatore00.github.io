@@ -2,7 +2,8 @@
 <html lang="fa" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Viewport استاندارد شده برای فیت شدن خودکار در تمامی گوشی‌ها و تبلت‌ها بدون زوم اضافه -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ================= THE ULTIMATE SEO MASTERY ================= -->
     <title>Amir Mohammad Amiri | امیرمحمد امیری | Network Architect</title>
@@ -60,20 +61,31 @@
             --glow-spread: rgba(6, 182, 212, 0.3);
         }
 
-        /* ANTI-COPY PROTECTION */
+        /* ANTI-COPY PROTECTION (Optimized for Mobile) */
         body {
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-touch-callout: none;
             background-color: var(--bg-deep); 
             color: var(--text-main); 
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden; 
+            width: 100%;
+            position: relative;
             cursor: none; 
             transition: background-color 0.8s ease;
         }
         body[dir="rtl"] { font-family: 'Vazirmatn', sans-serif; }
+        
+        /* جلوگیری از غیرفعال شدن کیبورد در گوشی برای فرم‌ها */
+        input, textarea {
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -ms-user-select: text !important;
+            user-select: text !important;
+        }
 
         /* THEMES */
         body.defcon-mode {
@@ -167,7 +179,8 @@
         .repel-text span { display: inline-block; transition: transform 0.2s ease-out, color 0.3s; }
         .repel-text span.repelled { color: var(--accent-cyan); text-shadow: 0 0 15px var(--accent-cyan); }
 
-        .marquee-wrapper { width: 100vw; position: relative; margin-left: -1.5rem; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 1.5rem 0; z-index: 15; overflow: hidden; margin-top: 2rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        /* Full bleed optimized for mobile to avoid horizontal scrolling issues */
+        .marquee-wrapper { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 1.5rem 0; z-index: 15; overflow: hidden; margin-top: 2rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .marquee-content { display: flex; width: max-content; animation: marquee 30s linear infinite; }
         body[dir="rtl"] .marquee-content { animation-direction: reverse; }
         .marquee-item { font-size: 1.5rem; font-weight: 900; -webkit-text-stroke: 1px rgba(255,255,255,0.2); color: transparent; margin: 0 2rem; letter-spacing: 0.1em; transition: 0.3s; }
@@ -361,7 +374,6 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Service 1 -->
                 <a href="#contact" onclick="prefillForm('درخواست: پشتیبانی و نگهداری شبکه', 'Request: Network Support & Maintenance', 'Anfrage: Netzwerkunterstützung')" class="glass-panel glow-card p-8 border-t-4 border-t-cyan-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">⚙️</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Network Support & Maintenance" data-fa="پشتیبانی و نگهداری شبکه" data-de="Netzwerkunterstützung & Wartung">Network Support & Maintenance</h3>
@@ -369,7 +381,6 @@
                     <div class="mt-4 text-cyan-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 2 -->
                 <a href="#contact" onclick="prefillForm('درخواست: امنیت شبکه و تست نفوذ', 'Request: Security & Penetration Testing', 'Anfrage: Sicherheit & Penetrationstests')" class="glass-panel glow-card p-8 border-t-4 border-t-red-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Security & Penetration Testing" data-fa="امنیت شبکه و تست نفوذ" data-de="Sicherheit & Penetrationstests">Security & Penetration Testing</h3>
@@ -377,7 +388,6 @@
                     <div class="mt-4 text-red-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 3 -->
                 <a href="#contact" onclick="prefillForm('درخواست: اجرای اکتیو و راه‌اندازی شبکه', 'Request: Active Network Setup', 'Anfrage: Aktive Netzwerkeinrichtung')" class="glass-panel glow-card p-8 border-t-4 border-t-blue-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🔌</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Active Network Setup" data-fa="اجرای اکتیو و راه‌اندازی شبکه" data-de="Aktive Netzwerkeinrichtung">Active Network Setup</h3>
@@ -385,7 +395,6 @@
                     <div class="mt-4 text-blue-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 4 -->
                 <a href="#contact" onclick="prefillForm('درخواست: فایروال و کنترل دسترسی', 'Request: Firewall & Access Control', 'Anfrage: Firewall & Zugriffskontrolle')" class="glass-panel glow-card p-8 border-t-4 border-t-purple-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🧱</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Firewall & Access Control" data-fa="فایروال و کنترل دسترسی" data-de="Firewall & Zugriffskontrolle">Firewall & Access Control</h3>
@@ -393,7 +402,6 @@
                     <div class="mt-4 text-purple-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 5 -->
                 <a href="#contact" onclick="prefillForm('درخواست: طراحی سایت شرکتی و فروشگاهی', 'Request: Web Design & E-Commerce', 'Anfrage: Webdesign & E-Commerce')" class="glass-panel glow-card p-8 border-t-4 border-t-green-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">💻</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Web Design & E-Commerce" data-fa="طراحی سایت فروشگاهی و شرکتی" data-de="Webdesign & E-Commerce">Web Design & E-Commerce</h3>
@@ -401,7 +409,6 @@
                     <div class="mt-4 text-green-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 6 -->
                 <a href="#contact" onclick="prefillForm('درخواست: خدمات IT کسب‌وکارهای کوچک', 'Request: Small Business IT Services', 'Anfrage: IT-Services für Kleinunternehmen')" class="glass-panel glow-card p-8 border-t-4 border-t-yellow-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🏢</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Small Business IT Services" data-fa="خدمات IT کسب‌وکارهای کوچک" data-de="IT-Services für Kleinunternehmen">Small Business IT Services</h3>
@@ -409,7 +416,6 @@
                     <div class="mt-4 text-yellow-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 7 -->
                 <a href="#contact" onclick="prefillForm('درخواست: راه‌اندازی VoIP و تلفن تحت شبکه', 'Request: VoIP & IP Telephony', 'Anfrage: VoIP & IP-Telefonie')" class="glass-panel glow-card p-8 border-t-4 border-t-pink-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">📞</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="VoIP & IP Telephony" data-fa="راه‌اندازی VoIP و تلفن تحت شبکه" data-de="VoIP & IP-Telefonie">VoIP & IP Telephony</h3>
@@ -417,7 +423,6 @@
                     <div class="mt-4 text-pink-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity t-elem" data-en="Request Service &rarr;" data-fa="ثبت درخواست این خدمت &larr;" data-de="Service anfordern &rarr;">Request Service &rarr;</div>
                 </a>
                 
-                <!-- Service 8 -->
                 <a href="#contact" onclick="prefillForm('درخواست: مجازی‌سازی و زیرساخت سرور', 'Request: Virtualization & Servers', 'Anfrage: Virtualisierung & Server')" class="glass-panel glow-card p-8 border-t-4 border-t-orange-500 group block hover-trigger cursor-pointer">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition-transform">🗄️</div>
                     <h3 class="text-xl font-bold text-white mb-3 t-elem" data-en="Virtualization & Servers" data-fa="مجازی‌سازی و زیرساخت سرور" data-de="Virtualisierung & Server">Virtualization & Servers</h3>
@@ -468,13 +473,13 @@
             </div>
         </section>
 
-        <!-- SECTION: EXPERIENCE (Reverted to perfectly centered line version) -->
+        <!-- SECTION: EXPERIENCE (Reverted to centered timeline, Mobile responsive) -->
         <section id="experience" class="mb-32 reveal scroll-trigger-panel">
             <h2 class="text-3xl font-black mb-10 flex items-center gap-4 t-elem decrypt-on-scroll" data-en="Professional Experience" data-fa="سوابق کاری" data-de="Berufserfahrung">
                 <span class="w-10 h-1 bg-purple-500 rounded-full"></span> Professional Experience
             </h2>
             
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:to-purple-500 timeline-line">
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 rtl:before:mr-5 rtl:before:ml-auto md:rtl:before:mr-auto md:rtl:before:ml-auto before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:to-purple-500 timeline-line">
                 
                 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-gray-900 bg-cyan-500 shadow-[0_0_20px_var(--glow-spread)] md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 flex-shrink-0"></div>
@@ -860,9 +865,18 @@
             }, 30);
         }
 
-        // --- SCROLL PROGRESS & GSAP ---
+        // --- SCROLL PROGRESS & GSAP (Mobile Optimized) ---
         function initGSAPandLenis() {
-            const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+            document.body.classList.remove('overflow-hidden');
+            document.documentElement.classList.remove('overflow-hidden');
+
+            const lenis = new Lenis({ 
+                duration: 1.2, 
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+                smoothWheel: true,
+                smoothTouch: false, // لمس در گوشی به حالت استاندارد مرورگر درمی‌آید تا اسکرول سخت نباشد
+                touchMultiplier: 2 
+            });
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => { lenis.raf(time * 1000); });
             gsap.ticker.lagSmoothing(0);
