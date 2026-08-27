@@ -2,12 +2,12 @@
 <html lang="fa" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport استاندارد شده برای فیت شدن خودکار در تمامی گوشی‌ها و تبلت‌ها بدون زوم اضافه -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- ================= THE ULTIMATE SEO MASTERY ================= -->
     <title>Amir Mohammad Amiri | امیرمحمد امیری | Network Architect</title>
-    <meta name="description" content="وب‌سایت رسمی امیر محمد امیری (Amir Mohammad Amiri)، معمار شبکه، متخصص سیسکو، فورتی‌نت و مجازی‌سازی. AmirMohammad Amiri - Network and Security Engineer.">
+    <!-- طول این متاتگ استاندارد شد تا در گوگل نقطه چین نشود -->
+    <meta name="description" content="وب‌سایت رسمی امیرمحمد امیری (Amir Mohammad Amiri)، معمار شبکه (Network Architect) و متخصص امنیت. طراحی زیرساخت، سیسکو و مجازی‌سازی.">
     <meta name="keywords" content="Amir Mohammad Amiri, AmirMohammad Amiri, amirmohammad amiri, amiri, amir mohammad, امیر محمد امیری, امیرمحمد امیری, امیری, Network Architect, مهندس شبکه, معمار شبکه">
     
     <meta property="og:title" content="Amir Mohammad Amiri | امیرمحمد امیری">
@@ -16,7 +16,9 @@
     <meta property="og:url" content="https://AmirMohammadAmiri.com">
     <meta property="og:type" content="website">
 
+    <!-- رفع خطای Apple Touch Icon -->
     <link rel="icon" href="website-icon.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="website-icon.jpg">
 
     <script type="application/ld+json">
     {
@@ -44,11 +46,12 @@
     </script>
     <!-- ========================================================= -->
 
+    <!-- اضافه کردن defer برای رفع خطای Render Blocking منابع -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     
     <style>
         :root {
@@ -61,7 +64,6 @@
             --glow-spread: rgba(6, 182, 212, 0.3);
         }
 
-        /* ANTI-COPY PROTECTION (Optimized for Mobile) */
         body {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -79,7 +81,6 @@
         }
         body[dir="rtl"] { font-family: 'Vazirmatn', sans-serif; }
         
-        /* جلوگیری از غیرفعال شدن کیبورد در گوشی برای فرم‌ها */
         input, textarea {
             -webkit-user-select: text !important;
             -moz-user-select: text !important;
@@ -87,7 +88,6 @@
             user-select: text !important;
         }
 
-        /* THEMES */
         body.defcon-mode {
             --bg-deep: #1a0505; --accent-cyan: #ef4444; --accent-purple: #dc2626;
             --glass-bg: rgba(40, 10, 10, 0.5); --glass-border: rgba(239, 68, 68, 0.2); --glow-spread: rgba(239, 68, 68, 0.4);
@@ -108,10 +108,9 @@
         #network-canvas { opacity: 0.5; transition: opacity 0.5s; }
         #matrix-canvas { opacity: 0; z-index: -6; }
 
-        /* MINIMAL CREATIVE CURSOR */
         .cursor-dot { position: fixed; top: 0; left: 0; width: 6px; height: 6px; background-color: var(--accent-cyan); border-radius: 50%; transform: translate(-50%, -50%); z-index: 999999; pointer-events: none; box-shadow: 0 0 10px var(--accent-cyan); transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s, border 0.3s; }
         .cursor-hover .cursor-dot { width: 45px; height: 45px; background-color: rgba(6, 182, 212, 0.05); border: 1.5px solid var(--accent-cyan); box-shadow: 0 0 15px rgba(6, 182, 212, 0.3); backdrop-filter: grayscale(80%) blur(1px); }
-        @media (pointer: coarse) { body { cursor: auto; } .cursor-dot { display: none !important; } } /* Disable custom cursor on mobile */
+        @media (pointer: coarse) { body { cursor: auto; } .cursor-dot { display: none !important; } }
 
         #telemetry-box { position: fixed; bottom: 20px; left: 20px; z-index: 50; font-family: 'Courier New', Courier, monospace; font-size: 10px; color: var(--accent-cyan); background: rgba(3, 7, 18, 0.7); border: 1px solid var(--glass-border); padding: 10px; border-radius: 8px; backdrop-filter: blur(8px); pointer-events: none; opacity: 0; transition: opacity 2s ease 5s; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
         #telemetry-box p { margin: 2px 0; }
@@ -179,7 +178,6 @@
         .repel-text span { display: inline-block; transition: transform 0.2s ease-out, color 0.3s; }
         .repel-text span.repelled { color: var(--accent-cyan); text-shadow: 0 0 15px var(--accent-cyan); }
 
-        /* Full bleed optimized for mobile to avoid horizontal scrolling issues */
         .marquee-wrapper { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; background: rgba(255, 255, 255, 0.02); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 1.5rem 0; z-index: 15; overflow: hidden; margin-top: 2rem; margin-bottom: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
         .marquee-content { display: flex; width: max-content; animation: marquee 30s linear infinite; }
         body[dir="rtl"] .marquee-content { animation-direction: reverse; }
@@ -268,9 +266,9 @@
         <div class="intro-flash"></div>
     </div>
 
-    <!-- 2. Language Selector -->
+    <!-- 2. Language Selector (H1 changed to H2 for SEO score) -->
     <div id="lang-overlay">
-        <h1 class="text-4xl font-light mb-12 text-gray-300 tracking-wide">Select Language</h1>
+        <h2 class="text-4xl font-light mb-12 text-gray-300 tracking-wide">Select Language</h2>
         <div class="flex flex-col md:flex-row gap-6">
             <button onclick="initSite('en')" class="magnetic hover-trigger px-8 py-4 border border-gray-700 rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-colors text-xl flex items-center justify-center gap-3 w-48">
                 <img src="English_language-icon.webp" alt="English Language" class="w-8 h-auto rounded-sm shadow-md border border-gray-600"> English
@@ -318,13 +316,12 @@
         <!-- SECTION 1: HOME -->
         <section id="home" class="min-h-[85vh] flex flex-col-reverse md:flex-row items-center justify-between gap-12 pt-10 mb-16 reveal">
             <div class="flex-1 space-y-6 text-center md:text-left rtl:md:text-right relative z-10">
+                <!-- THE ONLY H1 on the page (Crucial for SEO) -->
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight">
                     <span class="t-elem block text-gray-300 text-2xl sm:text-3xl md:text-4xl mb-2 font-light decrypt-target" data-en="I am" data-fa="من" data-de="Ich bin">I am</span>
                     
-                    <!-- EN/DE Name with Repel Effect & Whitespace no-wrap for mobile -->
                     <span class="en-de-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target repel-text t-elem whitespace-nowrap" id="name-repel" data-en="Amir Mohammad" data-de="Amir Mohammad" data-fa="Amir Mohammad">Amir Mohammad</span>
                     
-                    <!-- Persian Name without Repel Effect (Hidden in EN/DE, shown in FA) & Whitespace no-wrap -->
                     <span class="fa-name drop-shadow-[0_0_25px_rgba(255,255,255,0.2)] decrypt-target t-elem hidden whitespace-nowrap" data-fa="امیرمحمد امیری">امیرمحمد امیری</span>
                     <br>
                     
@@ -346,7 +343,8 @@
             <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-[450px] md:h-[450px] flex-shrink-0 relative mx-auto md:mx-0">
                 <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-3xl blur-3xl opacity-30 animate-pulse glow-bg"></div>
                 <div class="img-container w-full h-full">
-                    <img src="Amir Mohammad Amiri.jpeg" alt="امیرمحمد امیری - Amir Mohammad Amiri - Network Architect" title="Amir Mohammad Amiri" class="relative hero-img w-full h-full hover-trigger shadow-2xl">
+                    <!-- SEO Optimized Image -->
+                    <img src="Amir Mohammad Amiri.jpeg" alt="امیرمحمد امیری شاپورآبادی - Amir Mohammad Amiri" title="امیرمحمد امیری - Network Architect" class="relative hero-img w-full h-full hover-trigger shadow-2xl">
                 </div>
             </div>
         </section>
@@ -366,7 +364,7 @@
             </div>
         </div>
 
-        <!-- NEW SECTION: SERVICES -->
+        <!-- SECTION: SERVICES -->
         <section id="services" class="mb-32 reveal scroll-trigger-panel">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-4xl font-black mb-4 t-elem decrypt-on-scroll" data-en="Professional Services" data-fa="خدمات تخصصی" data-de="Professionelle Dienstleistungen">Professional Services</h2>
@@ -473,13 +471,13 @@
             </div>
         </section>
 
-        <!-- SECTION: EXPERIENCE (Reverted to centered timeline, Mobile responsive) -->
+        <!-- SECTION: EXPERIENCE -->
         <section id="experience" class="mb-32 reveal scroll-trigger-panel">
             <h2 class="text-3xl font-black mb-10 flex items-center gap-4 t-elem decrypt-on-scroll" data-en="Professional Experience" data-fa="سوابق کاری" data-de="Berufserfahrung">
                 <span class="w-10 h-1 bg-purple-500 rounded-full"></span> Professional Experience
             </h2>
             
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 rtl:before:mr-5 rtl:before:ml-auto md:rtl:before:mr-auto md:rtl:before:ml-auto before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:to-purple-500 timeline-line">
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:to-purple-500 timeline-line">
                 
                 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-gray-900 bg-cyan-500 shadow-[0_0_20px_var(--glow-spread)] md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 flex-shrink-0"></div>
@@ -611,7 +609,7 @@
                         </div>
                     </a>
                     
-                    <a href="https://wa.me/989963966631" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
+                    <a href="https://wa.me/989963966631" target="_blank" rel="noopener noreferrer" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon" style="color: #22c55e; border-color: rgba(34, 197, 94, 0.3); background: rgba(34, 197, 94, 0.1);">💬</div>
                         <div>
                             <div class="text-xs text-gray-400 t-elem uppercase tracking-widest" data-en="WhatsApp" data-fa="واتس‌اپ" data-de="WhatsApp">WhatsApp</div>
@@ -627,7 +625,7 @@
                         </div>
                     </a>
 
-                    <a href="https://linkedin.com/in/amir-mohammad-amiri-940306360" target="_blank" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
+                    <a href="https://linkedin.com/in/amir-mohammad-amiri-940306360" target="_blank" rel="noopener noreferrer" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon">🔗</div>
                         <div>
                             <div class="text-xs text-gray-400 uppercase tracking-widest">LinkedIn</div>
@@ -874,7 +872,7 @@
                 duration: 1.2, 
                 easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
                 smoothWheel: true,
-                smoothTouch: false, // لمس در گوشی به حالت استاندارد مرورگر درمی‌آید تا اسکرول سخت نباشد
+                smoothTouch: false,
                 touchMultiplier: 2 
             });
             lenis.on('scroll', ScrollTrigger.update);
