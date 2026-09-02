@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fa" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -13,7 +13,6 @@
     
     <meta property="og:title" content="Amir Mohammad Amiri | امیرمحمد امیری">
     <meta property="og:description" content="پورتفولیوی رسمی امیرمحمد امیری - طراح و معمار زیرساخت‌های حیاتی شبکه و امنیت سازمانی.">
-    <!-- URL Encoded for SEO Tags to pass strict validators -->
     <meta property="og:image" content="https://AmirMohammadAmiri.com/Amir%20Mohammad%20Amiri.jpg">
     <meta property="og:url" content="https://AmirMohammadAmiri.com/">
     <meta property="og:type" content="website">
@@ -41,7 +40,8 @@
       "url": "https://amirmohammadamiri.com/",
       "image": "https://amirmohammadamiri.com/Amir%20Mohammad%20Amiri.jpeg",
       "sameAs": [
-        "https://linkedin.com/in/amir-mohammad-amiri-940306360",
+        "https://www.linkedin.com/in/amirmohammadamirii",
+        "https://www.linkedin.com/in/amir-mohammad-amiri-940306360",
         "https://www.instagram.com/amirmohammadamirinet"
       ]
     }
@@ -298,7 +298,6 @@
             <div class="w-64 h-64 sm:w-72 sm:h-72 md:w-[450px] md:h-[450px] flex-shrink-0 relative mx-auto md:mx-0">
                 <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 rounded-3xl blur-3xl opacity-30 animate-pulse glow-bg"></div>
                 <div class="img-container w-full h-full">
-                    <!-- اسم فایل دقیق با فاصله برای نمایش صحیح هم در لوکال و هم سرور -->
                     <img src="Amir Mohammad Amiri.jpeg" alt="امیرمحمد امیری شاپورآبادی - Amir Mohammad Amiri" title="امیرمحمد امیری - Network Architect" class="relative hero-img w-full h-full hover-trigger shadow-2xl">
                 </div>
             </div>
@@ -588,7 +587,8 @@
                         </div>
                     </a>
 
-                    <a href="https://linkedin.com/in/amir-mohammad-amiri-940306360" target="_blank" rel="noopener noreferrer" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
+                    <!-- ONLY THE SHORT LINK HERE FOR USER CLICKS -->
+                    <a href="https://www.linkedin.com/in/amirmohammadamirii" target="_blank" rel="noopener noreferrer" class="glass-panel glow-card p-6 flex items-center gap-4 hover-trigger cursor-pointer" style="padding: 1.5rem;">
                         <div class="contact-card-icon">🔗</div>
                         <div>
                             <div class="text-xs text-gray-400 uppercase tracking-widest">LinkedIn</div>
@@ -871,6 +871,13 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initParticles(); animateParticles();
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if(langParam && ['fa', 'en', 'de'].includes(langParam)) {
+                localStorage.setItem('siteLang', langParam);
+            }
+
             setTimeout(() => {
                 const intro = document.getElementById('intro-screen');
                 intro.style.opacity = '0';
@@ -924,6 +931,11 @@
         let currentLatency = 10;
         function initSite(lang) {
             localStorage.setItem('siteLang', lang);
+            document.documentElement.lang = lang;
+            
+            const newUrl = lang === 'fa' ? '/' : '?lang=' + lang;
+            window.history.replaceState({}, '', newUrl);
+
             const overlay = document.getElementById('lang-overlay');
             overlay.style.transform = 'translateY(-100%)';
             
